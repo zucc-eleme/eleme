@@ -50,6 +50,7 @@ create table user
 (
    user_id              varchar(20) not null,
    user_name            varchar(20),
+	 user_phone						char(11),
    user_pwd             varchar(20),
    user_main_address    varchar(100),
    primary key (user_id)
@@ -97,6 +98,7 @@ create table store
    store_name           varchar(50) not null,
    store_passwd         varchar(20) not null,
    store_address        varchar(200) not null,
+   store_phone					char(11),
    delivery_begin       time not null,
    delivery_end         time not null,
    primary key (store_id)
