@@ -13,6 +13,8 @@ create table rider
    primary key (rider_id)
 );
 
+
+
 drop table if exists rider_evaluation;
 
 /*==============================================================*/
