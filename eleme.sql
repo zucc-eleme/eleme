@@ -5,7 +5,7 @@ drop table if exists rider;
 /*==============================================================*/
 create table rider
 (
-   rider_id             int not null,
+   rider_id             varchar(20) not null,
    rider_name           varchar(20) not null,
    rider_passwd         varchar(20) not null,
    rider_phone          char(11) not null,
@@ -20,7 +20,7 @@ drop table if exists rider_evaluation;
 /*==============================================================*/
 create table rider_evaluation
 (
-   rider_id             int,
+   rider_id             varchar(20) not null,
    user_id              varchar(20),
    rider_evaluate       text,
    rider_stars          float
@@ -63,7 +63,7 @@ drop table if exists ord;
 /*==============================================================*/
 create table ord
 (
-   ord_id               int not null,
+   ord_id               varchar(20) not null,
    user_id              varchar(20),
    store_id             int,
    rider_id             int,
@@ -94,7 +94,7 @@ drop table if exists store;
 /*==============================================================*/
 create table store
 (
-   store_id             int not null,
+   store_id             varchar(20) not null,
    store_name           varchar(50) not null,
    store_passwd         varchar(20) not null,
    store_address        varchar(200) not null,
@@ -111,8 +111,8 @@ drop table if exists reduction_plan;
 /*==============================================================*/
 create table reduction_plan
 (
-   plan_id              int not null,
-   store_id             int,
+   plan_id              varchar(20) not null,
+   store_id             varchar(20) not null,
    reduction_require    float(8,2) not null,
    reduction_money      float(8,2) not null,
    primary key (plan_id)
@@ -126,8 +126,8 @@ drop table if exists goods;
 create table goods
 (
    class_name           varchar(50) not null,
-   goods_id             int not null,
-   store_id             int,
+   goods_id             varchar(20) not null,
+   store_id             varchar(20) not null,
    goods_name           varchar(50) not null,
    goods_price          float(8,2) not null,
    goods_picture        longblob not null,
@@ -144,7 +144,7 @@ drop table if exists goods_evaluation;
 /*==============================================================*/
 create table goods_evaluation
 (
-   store_id             int,
+   store_id             varchar(20) not null,
    user_id              varchar(20),
    evaluation_content   text,
    evaluation_star      float,
