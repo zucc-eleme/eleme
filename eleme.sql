@@ -53,6 +53,7 @@ create table user
 	 user_phone						char(11),
    user_pwd             varchar(20),
    user_main_address    varchar(100),
+   user_sex 	int(11) NOT NULL DEFAULT '0',
    primary key (user_id)
 );
 
@@ -159,9 +160,10 @@ drop table if exists user_address;
 create table user_address
 (
    user_id              varchar(20),
-   user_address1        varchar(100) not null,
-   user_address2        varchar(100) not null,
-   user_address3        varchar(100) not null,
-   user_address4        varchar(100) not null,
-   user_address5        varchar(100) not null
+   user_address        varchar(100) not null,
+   main_address	int(11) NOT NULL DEFAULT '0'
+   user_name	varchar(20) NOT NULL,
+   user_sex	int(11) DEFAULT NULL，
+   address_detail	varchar(100) DEFAULT NULL,
+   address_type	int(11) DEFAULT NULL
 );

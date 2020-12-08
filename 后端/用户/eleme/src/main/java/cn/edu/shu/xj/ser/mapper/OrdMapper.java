@@ -1,18 +1,16 @@
 package cn.edu.shu.xj.ser.mapper;
 
-import cn.edu.shu.xj.ser.entity.user;
+import cn.edu.shu.xj.ser.entity.ord;
 import org.apache.ibatis.annotations.Param;
 import org.apache.ibatis.annotations.Select;
 import org.springframework.stereotype.Component;
 
-
 @Component
-public interface UserMapper {
-
+public interface OrdMapper {
     /**
-     * @param userid
+     * @param ordid
      * @return
      */
-    @Select("SELECT * FROM user WHERE user_id =#{userid} ")
-    user findOneUser(@Param("userid") String userid);
+    @Select("SELECT * FROM ord WHERE ord_id =#{ordid} ")
+    ord findOneOrder(@Param("ordid") String ordid);
 }
