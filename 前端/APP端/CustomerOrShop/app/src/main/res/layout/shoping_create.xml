@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/drawer_layout"
+    tools:context=".control.ShopCreateActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/shop_create_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        app:navigationIcon="@android:drawable/ic_menu_close_clear_cancel"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="#ffffff"
+        />
+
+    <EditText
+        android:id="@+id/editText_shop_id_create"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:background="#F7F2F2"
+        android:layout_gravity="center"
+        android:layout_marginTop="60dp"
+        android:ems="10"
+        android:hint="请输入用户名"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editText_shop_phone_create"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:background="#F7F2F2"
+        android:ems="10"
+        android:hint="请输入手机号"
+        android:inputType="textPersonName" />
+
+    <EditText
+        android:id="@+id/editText_shop_pwd_create"
+        android:layout_width="300dp"
+        android:layout_height="50dp"
+        android:layout_gravity="center"
+        android:layout_marginTop="30dp"
+        android:layout_marginBottom="36dp"
+        android:background="#F7F2F2"
+        android:ems="10"
+        android:hint="请输入密码"
+        android:inputType="textPassword" />
+
+    <Button
+        android:id="@+id/bt_shop_create"
+        android:layout_width="282dp"
+        android:layout_height="53dp"
+        android:background="#2196F3"
+        android:layout_gravity="center"
+        android:text="@string/register_button"
+        android:textColor="#ffffff"
+        android:textSize="24dp" />
+
+</LinearLayout>

@@ -1,0 +1,13 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="in_customer">我要订餐</string>
+    <string name="in_shop">我的店铺</string>
+    <string name="id_remind">请输入账号</string>
+    <string name="customer_create">用户注册</string>
+    <string name="shop_create">商家注册</string>
+    <string name="pwd_remind">请输入密码</string>
+    <string name="pwd_forget">忘记密码？</string>
+    <string name="login_button">登录</string>
+    <string name="register_button">注册</string>
+    <string name="pwd_inflect">获取验证码</string>
+</resources>
