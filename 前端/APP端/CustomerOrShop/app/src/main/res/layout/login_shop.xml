@@ -6,7 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
-    tools:context=".control.LoginCustomerActivity">
+    tools:context=".control.LoginCustomerActivity"
+    android:background="@drawable/shop_login_back">
 
     <androidx.appcompat.widget.Toolbar
         android:id="@+id/login_shop_toolbar"
@@ -18,45 +19,50 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:titleTextColor="#ffffff" />
 
-    <EditText
-        android:id="@+id/editUserId"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:background="#F7F2F2"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_gravity="center"
-        android:layout_marginTop="60dp"
-        android:ems="10"
-        android:hint="请输入用户名"
-        android:inputType="textPersonName" />
+        android:layout_marginTop="340dp"
+        android:background="@drawable/back_style">
+        <EditText
+            android:id="@+id/editUserId"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:lines="1"
+            android:layout_gravity="center"
+            android:ems="10"
+            android:hint="请输入用户名"
+            android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/editPwd"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="36dp"
-        android:background="#F7F2F2"
-        android:ems="10"
-        android:hint="请输入密码"
-        android:inputType="textPassword" />
+        <EditText
+            android:id="@+id/editPwd"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_gravity="center"
+            android:lines="1"
+            android:ems="10"
+            android:hint="请输入密码"
+            android:inputType="textPassword" />
 
-    <Button
-        android:id="@+id/login_shop"
-        android:layout_width="282dp"
-        android:layout_height="53dp"
-        android:background="#2196F3"
-        android:layout_marginTop="30dp"
-        android:layout_gravity="center"
-        android:text="@string/login_button"
-        android:textColor="#ffffff"
-        android:textSize="24dp" />
+        <Button
+            android:id="@+id/login_shop"
+            android:layout_width="282dp"
+            android:layout_height="53dp"
+            android:background="@drawable/button_style"
+            android:layout_marginTop="20dp"
+            android:layout_gravity="center"
+            android:text="@string/login_button"
+            android:textColor="#ffffff"
+            android:textSize="24dp" />
+    </LinearLayout>
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp"
+        android:layout_marginTop="20dp"
         android:layout_gravity="center">
 
         <TextView
@@ -64,8 +70,9 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:clickable="true"
-            android:layout_marginLeft="20dp"
-            android:text="@string/pwd_forget" />
+            android:layout_marginLeft="35dp"
+            android:text="@string/pwd_forget"
+            android:textColor="#CAECA4"/>
 
         <TextView
             android:id="@+id/shop_create"
@@ -74,8 +81,7 @@
             android:clickable="true"
             android:layout_marginLeft="210dp"
             android:text="@string/shop_create"
+            android:textColor="#CAECA4"
             />
     </LinearLayout>
-
-
 </LinearLayout>

@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android" android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/login_customer_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="center"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:titleTextColor="#ffffff"
+        android:gravity="center_horizontal">
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="80dp"
+            android:text="个人信息"
+            android:textColor="#ffffff"
+            android:textSize="22sp" />
+    </androidx.appcompat.widget.Toolbar>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:text="\t账号"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:lines="1"
+        android:gravity="center_vertical"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:text="\t用户名"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:lines="1"
+        android:gravity="center_vertical"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:text="\t手机号"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:lines="1"
+        android:gravity="center_vertical"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:text="\t密码"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:lines="1"
+        android:gravity="center_vertical"/>
+    <Button
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#ffffff"
+        android:text="\t收货地址"
+        android:textColor="#000000"
+        android:textSize="22sp"
+        android:lines="1"
+        android:gravity="center_vertical"/>
+</LinearLayout>

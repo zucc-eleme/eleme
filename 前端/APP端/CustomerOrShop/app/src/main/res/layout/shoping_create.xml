@@ -5,6 +5,8 @@
     android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/create_back2"
+    android:scaleType="fitCenter"
     android:id="@+id/drawer_layout"
     tools:context=".control.ShopCreateActivity">
 
@@ -24,9 +26,9 @@
         android:id="@+id/editText_shop_id_create"
         android:layout_width="300dp"
         android:layout_height="50dp"
-        android:background="#F7F2F2"
         android:layout_gravity="center"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="150dp"
+        android:lines="1"
         android:ems="10"
         android:hint="请输入用户名"
         android:inputType="textPersonName" />
@@ -37,7 +39,7 @@
         android:layout_height="50dp"
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
-        android:background="#F7F2F2"
+        android:lines="1"
         android:ems="10"
         android:hint="请输入手机号"
         android:inputType="textPersonName" />
@@ -49,7 +51,7 @@
         android:layout_gravity="center"
         android:layout_marginTop="30dp"
         android:layout_marginBottom="36dp"
-        android:background="#F7F2F2"
+        android:lines="1"
         android:ems="10"
         android:hint="请输入密码"
         android:inputType="textPassword" />
@@ -58,7 +60,7 @@
         android:id="@+id/bt_shop_create"
         android:layout_width="282dp"
         android:layout_height="53dp"
-        android:background="#2196F3"
+        android:background="#DAC933"
         android:layout_gravity="center"
         android:text="@string/register_button"
         android:textColor="#ffffff"

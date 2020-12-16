@@ -21,31 +21,39 @@
 
     <EditText
         android:id="@+id/id_for_back"
-        android:layout_width="match_parent"
+        android:layout_width="360dp"
         android:layout_height="wrap_content"
         android:layout_marginTop="30dp"
+        android:layout_gravity="center_horizontal"
         android:ems="10"
         android:inputType="textPersonName"
-        android:hint="请输入账号"
+        android:hint="请输入手机号"
         android:textSize="20sp"/>
-    <EditText
-        android:id="@+id/phone_for_back"
-        android:layout_width="match_parent"
+    <LinearLayout
+        android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="20dp"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:hint="请输入手机号码"
-        android:textSize="20sp"/>
-    <Button
-        android:id="@+id/button"
-        android:layout_width="282dp"
-        android:layout_height="53dp"
-        android:background="#2196F3"
-        android:layout_gravity="center"
-        android:layout_marginTop="40dp"
-        android:text="@string/pwd_inflect"
-        android:textColor="#ffffff"
-        android:textSize="24dp" />
+        android:orientation="horizontal"
+        android:layout_marginTop="20dp">
+        <EditText
+            android:id="@+id/phone_for_back"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:ems="10"
+            android:inputType="textPersonName"
+            android:hint="请输入验证码"
+            android:textSize="20sp"/>
+        <Button
+            android:id="@+id/button"
+            android:layout_width="150dp"
+            android:layout_height="53dp"
+            android:background="#2196F3"
+            android:layout_gravity="center"
+            android:layout_marginLeft="30dp"
+            android:text="@string/pwd_inflect"
+            android:textColor="#ffffff"
+            android:textSize="24dp" />
+    </LinearLayout>
+
 
 </LinearLayout>

@@ -6,6 +6,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:id="@+id/drawer_layout"
+    android:background="@drawable/customer_login_back"
     tools:context=".control.LoginCustomerActivity">
 
     <androidx.appcompat.widget.Toolbar
@@ -18,46 +19,53 @@
         app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
         app:titleTextColor="#ffffff" />
 
-    <EditText
-        android:id="@+id/editUserId"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:background="#F7F2F2"
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
         android:layout_gravity="center"
-        android:layout_marginTop="60dp"
-        android:ems="10"
-        android:hint="请输入用户名"
-        android:inputType="textPersonName" />
+        android:layout_marginTop="225dp"
+        android:background="@drawable/back_style">
+        <EditText
+            android:id="@+id/editUserId"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="10dp"
+            android:lines="1"
+            android:ems="10"
+            android:hint="请输入用户名"
+            android:inputType="textPersonName" />
 
-    <EditText
-        android:id="@+id/editPwd"
-        android:layout_width="300dp"
-        android:layout_height="50dp"
-        android:layout_gravity="center"
-        android:layout_marginTop="30dp"
-        android:layout_marginBottom="36dp"
-        android:background="#F7F2F2"
-        android:ems="10"
-        android:hint="请输入密码"
-        android:inputType="textPassword" />
+        <EditText
+            android:id="@+id/editUserPwd"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:lines="1"
+            android:ems="10"
+            android:hint="请输入密码"
+            android:inputType="textPassword" />
 
-    <Button
-        android:id="@+id/login_customer"
-        android:layout_width="282dp"
-        android:layout_height="53dp"
-        android:background="#2196F3"
-        android:layout_marginTop="30dp"
-        android:layout_gravity="center"
-        android:text="@string/login_button"
-        android:textColor="#ffffff"
-        android:textSize="24dp" />
+        <Button
+            android:id="@+id/login_customer"
+            android:layout_width="300dp"
+            android:layout_height="53dp"
+            android:background="@drawable/button_style"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"
+            android:text="@string/login_button"
+            android:textColor="#ffffff"
+            android:textSize="24dp" />
+    </LinearLayout>
+
 
     <LinearLayout
         android:layout_width="fill_parent"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        android:layout_marginTop="10dp"
-        android:layout_gravity="center">
+        android:layout_gravity="center"
+        >
 
         <TextView
             android:id="@+id/pwd_forget"
@@ -72,7 +80,7 @@
             android:layout_width="60dp"
             android:layout_height="20dp"
             android:clickable="true"
-            android:layout_marginLeft="210dp"
+            android:layout_marginLeft="240dp"
             android:text="@string/customer_create"
             />
     </LinearLayout>
