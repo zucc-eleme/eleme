@@ -2,7 +2,9 @@ package cn.edu.shu.xj.ser.controller;
 
 
 import cn.edu.shu.xj.ser.entity.*;
-import cn.edu.shu.xj.ser.service.*;
+import cn.edu.shu.xj.ser.service.impl.DiscountService;
+import cn.edu.shu.xj.ser.service.impl.OrdService;
+import cn.edu.shu.xj.ser.service.impl.UserAddressService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,35 +15,37 @@ import org.springframework.web.bind.annotation.RestController;
 @RestController
 public class HelloController {
 
-    @Autowired
-    StudentService studentService;
-
-    @ApiOperation(value = "查询学生")
-    @GetMapping("/query")
-    public Student queryStudent(Integer sid){
-        Student oneStudent = studentService.findOneStudent(sid);
-        return oneStudent;
-    }
-
-    @Autowired
-    UserService userService;
-
-    @ApiOperation(value = "查询用户")
-    @GetMapping("/query/User")
-    public user queryUser(String userid){
+//    @Autowired
+//    StudentService studentService;
+//
+//    @ApiOperation(value = "查询学生")
+//    @GetMapping("/query")
+//    public Student queryStudent(Integer sid){
 //        Student oneStudent = studentService.findOneStudent(sid);
-        user oneuser = userService.findOneUser(userid);
-        return oneuser;
-    }
+//
+//        return oneStudent;
+//    }
+
+//    @Autowired
+//    UserService userService;
+//
+//    @ApiOperation(value = "查询用户")
+//    @GetMapping("/query/User")
+//    public user queryUser(Long userid){
+////        Student oneStudent = studentService.findOneStudent(sid);
+//        user oneuser = userService.findOneUser(userid);
+////        System.out.println(oneuser);
+//        return oneuser;
+//    }
 
     @Autowired
     UserAddressService userAddressService;
 
     @ApiOperation(value = "查询用户地址")
     @GetMapping("/query/User/Address")
-    public user_address queryUserAddress(String userid){
+    public UserAddress queryUserAddress(String userid){
 //        Student oneStudent = studentService.findOneStudent(sid);
-        user_address oneuser_address = userAddressService.findOneUserAddress(userid);
+        UserAddress oneuser_address = userAddressService.findOneUserAddress(userid);
         return oneuser_address;
     }
 
@@ -50,9 +54,16 @@ public class HelloController {
 
     @ApiOperation(value = "查询优惠券")
     @GetMapping("/query/Discount")
-    public discount queryDiscount(String discountid){
-        discount onediscount = discountService.findOneDiscount(discountid);
+    public Discount queryDiscount(String discountid){
+        Discount onediscount = discountService.findOneDiscount(discountid);
         return  onediscount;
+    }
+
+    @ApiOperation(value = "增加优惠券")
+    @GetMapping("/insert/Discount")
+    public Discount insertDiscount(String discountid, String userid, String discountname, float discountmoney, float startmoney){
+        Discount onediscount = discountService.addOneUserDiscount(discountid,userid,discountname,discountmoney,startmoney);
+        return onediscount;
     }
 
     @Autowired
@@ -60,8 +71,10 @@ public class HelloController {
 
     @ApiOperation(value = "查询订单")
     @GetMapping("/query/order")
-    public ord queryOrder(String ordid){
-        ord oneord = ordService.findOneOrder(ordid);
+    public Ord queryOrder(String ordid){
+        Ord oneord = ordService.findOneOrder(ordid);
         return oneord;
     }
+
+
 }

@@ -1,68 +1,67 @@
 package cn.edu.shu.xj.ser.entity;
 
-public class user {
-    private String user_id;  //用户id
-    private String user_name;//用户名
-    private String user_pwd;//用户密码
-    private String user_main_address;//用户主地址
-    private String user_phone;//用户电话
-    private int user_sex;   //性别，0是先生，1是女士
+import com.baomidou.mybatisplus.annotation.IdType;
+import com.baomidou.mybatisplus.annotation.TableId;
+import com.baomidou.mybatisplus.annotation.TableName;
+import lombok.Data;
 
-    public String getUser_id() {
-        return user_id;
+@Data
+@TableName("user")
+public class User {
+    @TableId(value = "user_id")
+    private long userId;
+    private String userName;
+    private String userPwd;
+    private String userMainAddress;
+    private String userPhone;
+    //性别，0是先生，1是女士
+    private int userSex;
+
+    public long getUserId() {
+        return userId;
     }
 
-    public void setUser_id(String user_id) {
-        this.user_id = user_id;
+    public void setUserId(long userId) {
+        this.userId = userId;
     }
 
-    public String getUser_name() {
-        return user_name;
+    public String getUserName() {
+        return userName;
     }
 
-    public void setUser_name(String user_name) {
-        this.user_name = user_name;
+    public void setUserName(String userName) {
+        this.userName = userName;
     }
 
-    public String getUser_pwd() {
-        return user_pwd;
+    public String getUserPwd() {
+        return userPwd;
     }
 
-    public void setUser_pwd(String user_pwd) {
-        this.user_pwd = user_pwd;
+    public void setUserPwd(String userPwd) {
+        this.userPwd = userPwd;
     }
 
-    public String getUser_main_address() {
-        return user_main_address;
+    public String getUserMainAddress() {
+        return userMainAddress;
     }
 
-    public void setUser_main_address(String user_main_address) {
-        this.user_main_address = user_main_address;
+    public void setUserMainAddress(String userMainAddress) {
+        this.userMainAddress = userMainAddress;
     }
 
-    public String getUser_phone() {
-        return user_phone;
+    public String getUserPhone() {
+        return userPhone;
     }
 
-    public void setUser_phone(String user_phone) {
-        this.user_phone = user_phone;
+    public void setUserPhone(String userPhone) {
+        this.userPhone = userPhone;
     }
 
-    public int getUser_sex() {
-        return user_sex;
+    public int getUserSex() {
+        return userSex;
     }
 
-    public void setUser_sex(int user_sex) {
-        this.user_sex = user_sex;
+    public void setUserSex(int userSex) {
+        this.userSex = userSex;
     }
-
-//    @Override
-//    public String toString() {
-//        return "user{" +
-//                "user_id='" + user_id + '\'' +
-//                ", user_name='" + user_name + '\'' +
-//                ", user_pwd='" + user_pwd + '\'' +
-//                ", user_main_address='" + user_main_address + '\'' +
-//                '}';
-//    }
 }
