@@ -9,8 +9,9 @@
     <ImageView
         android:id="@+id/imageView"
         android:layout_width="match_parent"
-        android:layout_height="260dp"
-        app:srcCompat="@drawable/back_s"></ImageView>
+        android:layout_height="240dp"
+        app:srcCompat="@drawable/banner"
+        android:scaleType="fitCenter"></ImageView>
 
 
 
@@ -18,7 +19,7 @@
         android:id="@+id/in_customer"
         android:layout_width="282dp"
         android:layout_height="53dp"
-        android:background="#2196F3"
+        android:background="@drawable/button_style"
         android:layout_marginTop="30dp"
         android:layout_gravity="center"
         android:text="@string/in_customer"
@@ -28,7 +29,7 @@
         android:id="@+id/in_shop"
         android:layout_width="282dp"
         android:layout_height="53dp"
-        android:background="#2196F3"
+        android:background="@drawable/button_style"
         android:layout_marginTop="30dp"
         android:layout_gravity="center"
         android:text="@string/in_shop"
