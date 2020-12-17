@@ -15,6 +15,5 @@ public class UserService extends ServiceImpl<UserMapper,User> implements IUserSe
     public User findOneUser(long userId){
         return userMapper.findOneUser(userId);
     }
-    public User findOneUser(String userPhone){return userMapper.findOneUser(userPhone);}
-
+    public User findOneUserByPhone(String userPhone){return userMapper.findOneUserByPhone(userPhone);}
 }

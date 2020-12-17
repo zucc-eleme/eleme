@@ -23,8 +23,7 @@ public interface UserMapper extends BaseMapper<User> {
      * @return
      */
     @Select("SELECT * FROM user WHERE user_phone = #{userPhone}")
-    User findOneUser(@Param("userPhone") String userPhone);
-
+    User findOneUserByPhone(@Param("userPhone") String userPhone);
 
 
 }

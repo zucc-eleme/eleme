@@ -38,43 +38,43 @@ public class HelloController {
 //        return oneuser;
 //    }
 
-    @Autowired
-    UserAddressService userAddressService;
-
-    @ApiOperation(value = "查询用户地址")
-    @GetMapping("/query/User/Address")
-    public UserAddress queryUserAddress(String userid){
-//        Student oneStudent = studentService.findOneStudent(sid);
-        UserAddress oneuser_address = userAddressService.findOneUserAddress(userid);
-        return oneuser_address;
-    }
-
-    @Autowired
-    DiscountService discountService;
-
-    @ApiOperation(value = "查询优惠券")
-    @GetMapping("/query/Discount")
-    public Discount queryDiscount(String discountid){
-        Discount onediscount = discountService.findOneDiscount(discountid);
-        return  onediscount;
-    }
-
-    @ApiOperation(value = "增加优惠券")
-    @GetMapping("/insert/Discount")
-    public Discount insertDiscount(String discountid, String userid, String discountname, float discountmoney, float startmoney){
-        Discount onediscount = discountService.addOneUserDiscount(discountid,userid,discountname,discountmoney,startmoney);
-        return onediscount;
-    }
-
-    @Autowired
-    OrdService ordService;
-
-    @ApiOperation(value = "查询订单")
-    @GetMapping("/query/order")
-    public Ord queryOrder(String ordid){
-        Ord oneord = ordService.findOneOrder(ordid);
-        return oneord;
-    }
+//    @Autowired
+//    UserAddressService userAddressService;
+//
+//    @ApiOperation(value = "查询用户地址")
+//    @GetMapping("/query/User/Address")
+//    public UserAddress queryUserAddress(String userid){
+////        Student oneStudent = studentService.findOneStudent(sid);
+//        UserAddress oneuser_address = userAddressService.findOneUserAddress(userid);
+//        return oneuser_address;
+//    }
+//
+//    @Autowired
+//    DiscountService discountService;
+//
+//    @ApiOperation(value = "查询优惠券")
+//    @GetMapping("/query/Discount")
+//    public Discount queryDiscount(String discountid){
+//        Discount onediscount = discountService.findOneDiscount(discountid);
+//        return  onediscount;
+//    }
+//
+//    @ApiOperation(value = "增加优惠券")
+//    @GetMapping("/insert/Discount")
+//    public Discount insertDiscount(String discountid, String userid, String discountname, float discountmoney, float startmoney){
+//        Discount onediscount = discountService.addOneUserDiscount(discountid,userid,discountname,discountmoney,startmoney);
+//        return onediscount;
+//    }
+//
+//    @Autowired
+//    OrdService ordService;
+//
+//    @ApiOperation(value = "查询订单")
+//    @GetMapping("/query/order")
+//    public Ord queryOrder(String ordid){
+//        Ord oneord = ordService.findOneOrder(ordid);
+//        return oneord;
+//    }
 
 
 }

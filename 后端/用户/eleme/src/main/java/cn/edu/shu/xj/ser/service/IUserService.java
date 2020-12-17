@@ -7,5 +7,5 @@ import com.baomidou.mybatisplus.extension.service.IService;
 public interface IUserService extends IService<User> {
 
     User findOneUser(long userId);
-    User findOneUser(String userPhone);
+    User findOneUserByPhone(String userPhone);
 }

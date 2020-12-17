@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
+import org.intellij.lang.annotations.Pattern;
 
 @Data
 @TableName("user")
@@ -13,6 +14,7 @@ public class User {
     private String userName;
     private String userPwd;
     private String userMainAddress;
+//    @Pattern(regexp = RegexUtil.PHONE, message = "请填写正确的手格式")
     private String userPhone;
     //性别，0是先生，1是女士
     private int userSex;
