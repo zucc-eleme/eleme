@@ -22,8 +22,10 @@ drop table if exists rider_evaluation;
 CREATE TABLE `rider_evaluation` (
   `rider_id` bigint(11) DEFAULT NULL,
   `user_id` bigint(11) DEFAULT NULL,
+  `user_name` varchar(100) DEFAULT NULL,
   `rider_evaluate` text,
-  `rider_stars` float DEFAULT NULL
+  `rider_stars` float DEFAULT NULL,
+  `evaluate_time` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 drop table if exists discount;
@@ -139,9 +141,11 @@ drop table if exists goods_evaluation;
 CREATE TABLE `goods_evaluation` (
   `store_id` bigint(11) DEFAULT NULL,
   `user_id` bigint(11) DEFAULT NULL,
+  `user_name` varchar(100) DEFAULT NULL,
   `evaluation_content` text,
   `evaluation_star` float DEFAULT NULL,
-  `evaluation_img` longblob
+  `evaluation_img` varchar(500) DEFAULT NULL,
+  `evaluation_time` datetime DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 
