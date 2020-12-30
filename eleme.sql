@@ -63,16 +63,17 @@ drop table if exists ord;
 /* Table: ord                                                   */
 /*==============================================================*/
 CREATE TABLE `ord` (
-  `ord_id` bigint(11) NOT NULL,
+  `ord_id` bigint(11) NOT NULL AUTO_INCREMENT,
   `user_id` bigint(11) DEFAULT NULL,
   `store_id` bigint(11) DEFAULT NULL,
   `rider_id` bigint(11) DEFAULT NULL,
-  `total_money` float(8,2) NOT NULL,
-  `total_discount` float(8,2) NOT NULL,
-  `ord_time` datetime NOT NULL,
-  `rider_get` float(8,2) NOT NULL,
+  `total_money` float(8,2) DEFAULT NULL,
+  `total_discount` float(8,2) DEFAULT NULL,
+  `ord_time` datetime DEFAULT NULL,
+  `rider_get` float(8,2) DEFAULT NULL,
+  `is_return` int(1) DEFAULT '0',
   PRIMARY KEY (`ord_id`)
-) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
 
 drop table if exists ord_goods;
 
@@ -93,14 +94,15 @@ drop table if exists store;
 /*==============================================================*/
 CREATE TABLE `store` (
   `store_id` bigint(50) NOT NULL AUTO_INCREMENT,
+  `store_class` varchar(200) DEFAULT NULL,
   `store_name` varchar(50) DEFAULT NULL,
-  `store_passwd` varchar(20) DEFAULT NULL,
+  `store_passwd` varchar(255) DEFAULT NULL,
   `store_address` varchar(200) DEFAULT NULL,
   `store_phone` char(11) DEFAULT NULL,
   `delivery_begin` varchar(200) DEFAULT NULL,
   `delivery_end` varchar(200) DEFAULT NULL,
   PRIMARY KEY (`store_id`)
-) ENGINE=InnoDB AUTO_INCREMENT=5 DEFAULT CHARSET=utf8mb4;
+) ENGINE=InnoDB AUTO_INCREMENT=14 DEFAULT CHARSET=utf8mb4;
 
 drop table if exists reduction_plan;
 
