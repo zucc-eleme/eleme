@@ -4,4 +4,5 @@ import cn.edu.shu.xj.ser.entity.Goods;
 import com.baomidou.mybatisplus.extension.service.IService;
 
 public interface IGoodsService extends IService<Goods> {
+    int isGoodsNameExist(String goodsName,long storeId);
 }

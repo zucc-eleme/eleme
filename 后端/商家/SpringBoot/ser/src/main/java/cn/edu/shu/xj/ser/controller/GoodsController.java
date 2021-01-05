@@ -19,9 +19,16 @@ public class GoodsController {
     @Autowired
     IGoodsService goodsService;
 
-    @ApiOperation(value = "添加或修改商品")
+    @ApiOperation(value = "修改商品")
     @PostMapping("/save")
     public boolean save(Goods goods){
+        return goodsService.saveOrUpdate(goods);
+    }
+
+    @ApiOperation(value = "添加商品")
+    @PostMapping("/add")
+    public boolean add(Goods goods){
+
         return goodsService.saveOrUpdate(goods);
     }
 
