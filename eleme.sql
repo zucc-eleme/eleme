@@ -51,13 +51,15 @@ CREATE TABLE `goods` (
 -- ----------------------------
 DROP TABLE IF EXISTS `goods_evaluation`;
 CREATE TABLE `goods_evaluation` (
+  `evaluate_id` bigint(11) NOT NULL AUTO_INCREMENT,
   `store_id` bigint(11) DEFAULT NULL,
   `user_id` bigint(11) DEFAULT NULL,
   `user_name` varchar(100) DEFAULT NULL,
   `evaluation_content` text,
   `evaluation_star` float DEFAULT NULL,
   `evaluation_img` varchar(500) DEFAULT NULL,
-  `evaluation_time` datetime DEFAULT NULL
+  `evaluation_time` datetime DEFAULT NULL,
+  PRIMARY KEY (`evaluate_id`)
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- ----------------------------
