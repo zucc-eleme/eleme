@@ -11,6 +11,8 @@ import lombok.Data;
 public class Store {
     @TableId(value="store_id",type =IdType.AUTO)
     private long storeId;
+    @TableField(value = "store_class")
+    private String storeClass;
     @TableField(value = "store_name")
     private String storeName;
     @TableField(value = "store_passwd")
@@ -24,8 +26,9 @@ public class Store {
     @TableField(value = "delivery_end")
     private String deliveryEnd;
 
-
-    public Store(String storeName, String storePasswd, String storeAddress, String storePhone, String deliveryBegin, String deliveryEnd) {
+    public Store(long storeId, String storeClass, String storeName, String storePasswd, String storeAddress, String storePhone, String deliveryBegin, String deliveryEnd) {
+        this.storeId = storeId;
+        this.storeClass = storeClass;
         this.storeName = storeName;
         this.storePasswd = storePasswd;
         this.storeAddress = storeAddress;
@@ -34,22 +37,35 @@ public class Store {
         this.deliveryEnd = deliveryEnd;
     }
 
-    public Store(long storeId, String storeName, String storePasswd, String storeAddress, String storePhone, String deliveryBegin, String deliveryEnd) {
-        this.storeId = storeId;
+    public Store(String storeClass, String storeName, String storePasswd, String storeAddress, String storePhone, String deliveryBegin, String deliveryEnd) {
+        this.storeClass = storeClass;
         this.storeName = storeName;
         this.storePasswd = storePasswd;
         this.storeAddress = storeAddress;
         this.storePhone = storePhone;
         this.deliveryBegin = deliveryBegin;
         this.deliveryEnd = deliveryEnd;
+    }
+
+    public Store(String storePhone, String storePasswd) {
+        this.storePhone = storePhone;
+        this.storePasswd= storePasswd;
     }
 
     public long getStoreId() {
         return storeId;
     }
 
-    public void setStoreId(int storeId) {
+    public void setStoreId(long storeId) {
         this.storeId = storeId;
+    }
+
+    public String getStoreClass() {
+        return storeClass;
+    }
+
+    public void setStoreClass(String storeClass) {
+        this.storeClass = storeClass;
     }
 
     public String getStoreName() {

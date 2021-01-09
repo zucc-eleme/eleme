@@ -27,4 +27,97 @@ public class Goods {
     private int monthSales;
     @TableField(value = "high_rating")
     private float highRating;
+
+    public Goods(long goodsId, String className, long storeId, String goodsName, float goodsPrice, String goodsPicture, String goodsDescription, int monthSales, float highRating) {
+        this.goodsId = goodsId;
+        this.className = className;
+        this.storeId = storeId;
+        this.goodsName = goodsName;
+        this.goodsPrice = goodsPrice;
+        this.goodsPicture = goodsPicture;
+        this.goodsDescription = goodsDescription;
+        this.monthSales = monthSales;
+        this.highRating = highRating;
+    }
+
+    public Goods(String className, long storeId, String goodsName, float goodsPrice, String goodsPicture, String goodsDescription) {
+        this.className = className;
+        this.storeId = storeId;
+        this.goodsName = goodsName;
+        this.goodsPrice = goodsPrice;
+        this.goodsPicture = goodsPicture;
+        this.goodsDescription = goodsDescription;
+    }
+
+    public long getGoodsId() {
+        return goodsId;
+    }
+
+    public void setGoodsId(long goodsId) {
+        this.goodsId = goodsId;
+    }
+
+    public String getClassName() {
+        return className;
+    }
+
+    public void setClassName(String className) {
+        this.className = className;
+    }
+
+    public long getStoreId() {
+        return storeId;
+    }
+
+    public void setStoreId(long storeId) {
+        this.storeId = storeId;
+    }
+
+    public String getGoodsName() {
+        return goodsName;
+    }
+
+    public void setGoodsName(String goodsName) {
+        this.goodsName = goodsName;
+    }
+
+    public float getGoodsPrice() {
+        return goodsPrice;
+    }
+
+    public void setGoodsPrice(float goodsPrice) {
+        this.goodsPrice = goodsPrice;
+    }
+
+    public String getGoodsPicture() {
+        return goodsPicture;
+    }
+
+    public void setGoodsPicture(String goodsPicture) {
+        this.goodsPicture = goodsPicture;
+    }
+
+    public String getGoodsDescription() {
+        return goodsDescription;
+    }
+
+    public void setGoodsDescription(String goodsDescription) {
+        this.goodsDescription = goodsDescription;
+    }
+
+    public int getMonthSales() {
+        return monthSales;
+    }
+
+    public void setMonthSales(int monthSales) {
+        this.monthSales = monthSales;
+    }
+
+    public float getHighRating() {
+        return highRating;
+    }
+
+    public void setHighRating(float highRating) {
+        this.highRating = highRating;
+    }
 }
