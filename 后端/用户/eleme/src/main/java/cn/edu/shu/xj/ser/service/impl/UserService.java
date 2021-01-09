@@ -16,4 +16,5 @@ public class UserService extends ServiceImpl<UserMapper,User> implements IUserSe
         return userMapper.findOneUser(userId);
     }
     public User findOneUserByPhone(String userPhone){return userMapper.findOneUserByPhone(userPhone);}
+    public long getMaxUserId(){return userMapper.getMaxUserId();}
 }

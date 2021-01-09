@@ -93,6 +93,12 @@ public class UserLoginController {
 //        return success;
 //    }
 
+    @ApiOperation(value = "获取最大用户id")
+    @GetMapping("/get/maxUserId")
+    public long getMaxUserId(){
+        return userService.getMaxUserId();
+    }
+
     @ApiOperation(value = "通过用户id删除用户")
     @PostMapping("/remove/userId")
     public boolean removeByUseid(@RequestParam(value = "userId") long userId){
