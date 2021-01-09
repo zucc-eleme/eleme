@@ -21,6 +21,8 @@ public class Discount {//用户优惠券
     @TableField(value = "store_id")
     private Long storeId;
 
+    public Discount(){
+    }
     public Discount(String discountId, Long userId, String discountName, float discountMoney, float startMoney, Long storeId) {
         this.discountId = discountId;
         this.userId = userId;

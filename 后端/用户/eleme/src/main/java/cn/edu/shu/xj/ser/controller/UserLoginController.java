@@ -33,6 +33,8 @@ public class UserLoginController {
     @GetMapping("/query/userPhone")
     public User queryUserPhone(String userPhone){
         User oneuser = userService.findOneUserByPhone(userPhone);
+//        String pwd = Md5Utils.convertMD5(oneuser.getUserPwd());
+//        oneuser.setUserPwd(pwd);
         return oneuser;
     }
 
@@ -44,7 +46,9 @@ public class UserLoginController {
         User oneuser = userService.findOneUserByPhone(user.getUserPhone());
         if(oneuser!=null)
             return false;
-        String pwd = Md5Utils.code(user.getUserPwd());
+        String pwd = Md5Utils.convertMD5(user.getUserPwd());
+        long userId = getMaxUserId();
+        user.setUserId(userId);
         user.setUserPwd(pwd);
         SerApplication.currentUser=user;
         return userService.save(user);
@@ -123,7 +127,8 @@ public class UserLoginController {
     @GetMapping("/login/userPhone")
     public boolean loginByUserPhone(@RequestParam(value = "userPhone") String userPhone, @RequestParam(value = "userPwd") String userPwd){
         User user = userService.findOneUserByPhone(userPhone);
-        if(user==null||!Md5Utils.code(userPwd).equals(user.getUserPwd()))
+//        if(user==null||!Md5Utils.code(userPwd).equals(user.getUserPwd()))
+        if(user==null||!Md5Utils.convertMD5(userPwd).equals(user.getUserPwd()))
             return false;
         SerApplication.currentUser = user;
         return true;

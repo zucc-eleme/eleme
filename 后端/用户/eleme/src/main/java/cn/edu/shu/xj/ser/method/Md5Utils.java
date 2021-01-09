@@ -26,11 +26,11 @@ public class Md5Utils {
                 buf.append(Integer.toHexString(i));
             }
             //32位加密(小写)
-            return buf.toString();
+//            return buf.toString();
             //32位加密(大写)
             //return buf.toString().toUpperCase();
             // 16位的加密(小写)
-            //return buf.toString().substring(8, 24);
+            return buf.toString().substring(8, 24);
             // 16位的加密(大写)
             //return buf.toString().substring(8, 24).toUpperCase();
         } catch (NoSuchAlgorithmException e) {
@@ -39,5 +39,20 @@ public class Md5Utils {
         }
 
     }
+
+    /**
+     * 加密解密算法 执行一次加密，两次解密
+     */
+    public static String convertMD5(String inStr) {
+
+        char[] a = inStr.toCharArray();
+        for (int i = 0; i < a.length; i++) {
+            a[i] = (char) (a[i] ^ 't');
+        }
+        String s = new String(a);
+        return s;
+
+    }
 }
+
 

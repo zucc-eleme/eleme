@@ -2,6 +2,7 @@ package cn.edu.shu.xj.ser.service.impl;
 
 import cn.edu.shu.xj.ser.entity.User;
 import cn.edu.shu.xj.ser.mapper.UserMapper;
+import cn.edu.shu.xj.ser.method.Md5Utils;
 import cn.edu.shu.xj.ser.service.IUserService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +16,6 @@ public class UserService extends ServiceImpl<UserMapper,User> implements IUserSe
     public User findOneUser(long userId){
         return userMapper.findOneUser(userId);
     }
-    public User findOneUserByPhone(String userPhone){return userMapper.findOneUserByPhone(userPhone);}
+    public User findOneUserByPhone(String userPhone){ return userMapper.findOneUserByPhone(userPhone); }
     public long getMaxUserId(){return userMapper.getMaxUserId();}
 }

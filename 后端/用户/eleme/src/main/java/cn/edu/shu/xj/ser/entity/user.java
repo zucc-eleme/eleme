@@ -27,6 +27,9 @@ public class User {
     @TableField(value = "user_sex")
     private int userSex;
 
+    public User(){
+    }
+
     public User(long userId, String userName, String userPwd, long userAddressId, String userMainAddress, String userPhone, int userSex) {
         this.userId = userId;
         this.userName = userName;
