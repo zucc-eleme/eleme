@@ -7,7 +7,9 @@
         <result column="user_name" property="userName"/>
         <result column="user_phone" property="userPhone"/>
         <result column="user_pwd" property="userPwd"/>
+        <result column="user_address_id" property="userAddressId"/>
         <result column="user_main_address" property="userMainAddress"/>
         <result column="user_sex" property="userSex"/>
+
     </resultMap>
 </mapper>

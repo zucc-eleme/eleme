@@ -1,12 +1,14 @@
 package cn.edu.shu.xj.ser.service.impl;
 
 import cn.edu.shu.xj.ser.entity.Discount;
-import cn.edu.shu.xj.ser.mapper.DisountMapper;
+import cn.edu.shu.xj.ser.mapper.DiscountMapper;
+import cn.edu.shu.xj.ser.service.IDiscountService;
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class DiscountService {
+public class DiscountService extends ServiceImpl<DiscountMapper,Discount> implements IDiscountService {
     //     String discount_id; //优惠券id
     //     String user_id; //用户id
     //     String discount_name; //优惠券名称
@@ -14,13 +16,14 @@ public class DiscountService {
     //     float start_money; //使用优惠券的最低价格
 
     @Autowired
-    DisountMapper disountMapper;
+    DiscountMapper discountMapper;
 
-    public Discount findOneDiscount(String discountid){
-        return disountMapper.findOneDiscount(discountid);
+    public Discount findOneDiscount(String discountId){
+        return discountMapper.findOneDiscount(discountId);
     }
 
-    public Discount addOneUserDiscount(String discountid, String userid, String discountname, float discountmoney, float startmoney){
-        return disountMapper.addOneUserDiscount(discountid,userid,discountname,discountmoney,startmoney);
+    public Discount findOneDiscountByName(String discountName){
+        return discountMapper.findOneDiscountByName(discountName);
     }
+
 }

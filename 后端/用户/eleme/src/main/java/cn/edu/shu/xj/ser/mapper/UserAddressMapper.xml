@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.shu.xj.ser.mapper.DiscountMapper" >
+    <!-- 通用查询映射结果 -->
+    <resultMap id="UserAddressResultMap" type="cn.edu.shu.xj.ser.entity.UserAddress">
+        <result column="user_id" property="userId"/>
+        <result column="address_id" property="addressId"/>
+        <result column="user_address" property="userAddress"/>
+        <result column="main_address" property="mainAddress"/>
+        <result column="user_name" property="userName"/>
+        <result column="user_sex" property="userSex"/>
+        <result column="address_detail" property="addressDetail"/>
+        <result column="address_type" property="addressType"/>
+    </resultMap>
+</mapper>

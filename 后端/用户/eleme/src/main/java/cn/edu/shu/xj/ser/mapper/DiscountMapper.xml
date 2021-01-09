@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.shu.xj.ser.mapper.DiscountMapper" >
+    <!-- 通用查询映射结果 -->
+    <resultMap id="DiscountResultMap" type="cn.edu.shu.xj.ser.entity.Discount">
+        <result column="discount_id" property="discountId"/>
+        <result column="user_id" property="userId"/>
+        <result column="store_id" property="storeId"/>
+        <result column="discount_name" property="discountName"/>
+        <result column="discount_money" property="discountMoney"/>
+        <result column="start_money" property="startMoney"/>
+    </resultMap>
+</mapper>

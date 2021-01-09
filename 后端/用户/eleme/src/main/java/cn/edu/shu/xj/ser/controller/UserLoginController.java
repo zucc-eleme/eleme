@@ -95,27 +95,27 @@ public class UserLoginController {
 
     @ApiOperation(value = "通过用户id删除用户")
     @PostMapping("/remove/userId")
-    public boolean removeByUseid(@RequestParam long userId){
+    public boolean removeByUseid(@RequestParam(value = "userId") long userId){
         return userService.removeById(userId);
     }
 
     @ApiOperation(value = "通过用户电话删除用户")
     @PostMapping("/remove/userPhone")
-    public boolean removeByUserPhone(@RequestParam String userPhone){
+    public boolean removeByUserPhone(@RequestParam(value = "userPhone") String userPhone){
         LambdaQueryWrapper<User> qw = new QueryWrapper<User>().lambda().eq(User::getUserPhone,userPhone);
         return  userService.remove(qw);
     }
 
     @ApiOperation(value = "通过用户名删除用户")
     @PostMapping("/remove/userName")
-    public boolean removeByUserName(@RequestParam String userName){
+    public boolean removeByUserName(@RequestParam(value = "userName") String userName){
         LambdaQueryWrapper<User> qw = new QueryWrapper<User>().lambda().eq(User::getUserName,userName);
         return userService.remove(qw);
     }
 
     @ApiOperation(value = "用户通过电话登录")
     @GetMapping("/login/userPhone")
-    public boolean loginByUserPhone(@RequestParam String userPhone, @RequestParam String userPwd){
+    public boolean loginByUserPhone(@RequestParam(value = "userPhone") String userPhone, @RequestParam(value = "userPwd") String userPwd){
         User user = userService.findOneUserByPhone(userPhone);
         if(user==null||!Md5Utils.code(userPwd).equals(user.getUserPwd()))
             return false;
