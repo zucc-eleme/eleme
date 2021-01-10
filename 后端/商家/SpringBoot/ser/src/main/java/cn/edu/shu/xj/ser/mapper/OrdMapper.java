@@ -23,4 +23,7 @@ public interface OrdMapper extends BaseMapper<Ord> {
 
     @Select("SELECT SUM(total_money)/COUNT(*) FROM ord WHERE store_id=#{storeId} AND is_return=#{isReturn}")
     float averageConsumption(@Param("storeId")long storeId,@Param("isReturn") int isReturn);
+
+    @Select("SELECT * FROM ord WHERE store_id=#{storeId} AND user_id=#{userId}  AND is_return=0")
+    Ord findOrd(@Param("storeId")long storeId,@Param("userId")long userId);
 }

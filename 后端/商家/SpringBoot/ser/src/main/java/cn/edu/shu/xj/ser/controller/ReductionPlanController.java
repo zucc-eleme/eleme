@@ -49,4 +49,10 @@ public class ReductionPlanController {
         LambdaQueryWrapper<ReductionPlan> qw=new QueryWrapper<ReductionPlan>().lambda().like(ReductionPlan::getStoreId,store.getStoreId());
         return reductionPlanService.list(qw);
     }
+
+    @ApiOperation(value = "找到最优满减方案")
+    @GetMapping("/search/bestPlan")
+    public float bestPlan(float reMoney){
+        return reductionPlanService.bestPlan(reMoney);
+    }
 }

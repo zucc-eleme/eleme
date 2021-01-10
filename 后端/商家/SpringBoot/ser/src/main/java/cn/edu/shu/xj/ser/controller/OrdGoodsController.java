@@ -1,5 +1,7 @@
 package cn.edu.shu.xj.ser.controller;
 
+import cn.edu.shu.xj.ser.entity.Goods;
+import cn.edu.shu.xj.ser.entity.Ord;
 import cn.edu.shu.xj.ser.entity.OrdGoods;
 import cn.edu.shu.xj.ser.service.IOrdGoodsService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
@@ -25,9 +27,16 @@ public class OrdGoodsController {
         return ordGoodsService.list(qw);
     }
 
-    @ApiOperation(value = "添加或修改订单商品")
+    @ApiOperation(value = "添加订单商品")
     @PostMapping("/save")
-    public boolean save(@RequestBody OrdGoods ordGoods){
+    public boolean save(@RequestBody Ord ord,@RequestBody Goods goods,int n){
+        OrdGoods ordGoods=new OrdGoods(ord.getOrdId(), goods.getGoodsName(),n, goods.getGoodsPrice());
+        return ordGoodsService.saveOrUpdate(ordGoods);
+    }
+
+    @ApiOperation(value = "修改订单商品")
+    @PostMapping("/update")
+    public boolean update(@RequestBody OrdGoods ordGoods){
         return ordGoodsService.saveOrUpdate(ordGoods);
     }
 
@@ -35,5 +44,12 @@ public class OrdGoodsController {
     @PostMapping("/remove")
     public boolean remove(@RequestBody OrdGoods ordGoods){
         return ordGoodsService.removeById(ordGoods.getOrdId());
+    }
+
+    @ApiOperation(value = "根据订单查看订单总额")
+    @GetMapping("/totalMoney")
+    public float totalMoney(@RequestBody Ord ord){
+        return ordGoodsService.totalMoney(ord.getOrdId());
+
     }
 }

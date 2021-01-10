@@ -1,8 +1,6 @@
 package cn.edu.shu.xj.ser.controller;
 
-import cn.edu.shu.xj.ser.entity.Goods;
-import cn.edu.shu.xj.ser.entity.Ord;
-import cn.edu.shu.xj.ser.entity.Store;
+import cn.edu.shu.xj.ser.entity.*;
 import cn.edu.shu.xj.ser.service.IOrdService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -12,6 +10,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
 @Api(tags = "测试接口")
@@ -67,11 +66,61 @@ public class OrdController {
         return sum/n;
     }
 
-    @ApiOperation(value = "添加订单")
+    @ApiOperation(value = "创建订单")
     @PostMapping("/add")
-    public boolean add(@RequestBody Ord ord){
+    public boolean add(@RequestBody Store store, @RequestBody User user){
+        Ord ord=new Ord(store.getStoreId(),user.getUserId(),0,0);
         return ordService.saveOrUpdate(ord);
     }
+
+    @ApiOperation(value = "查找订单")
+    @GetMapping("/search")
+    public Ord search(@RequestBody Store store, @RequestBody User user){
+        return ordService.findOrd(store.getStoreId(),user.getUserId());
+    }
+
+    @ApiOperation(value = "刷新订单总额")
+    @PostMapping("/fresh/totalMoney")
+    public boolean totalMoney(@RequestBody Store store, @RequestBody User user){
+        Ord ord=ordService.findOrd(store.getStoreId(),user.getUserId());
+        if(ord==null){
+            ordService.saveOrUpdate(new Ord(store.getStoreId(),user.getUserId(),0,0));
+            ord=ordService.findOrd(store.getStoreId(),user.getUserId());
+        }
+        OrdGoodsController ordGoodsController=new OrdGoodsController();
+        ord.setTotalMoney(ordGoodsController.totalMoney(ord));
+        return ordService.saveOrUpdate(ord);
+    }
+
+    @ApiOperation(value = "刷新订单满减")
+    @PostMapping("/fresh/plan")
+    public boolean plan(@RequestBody Store store, @RequestBody User user){
+        Ord ord=ordService.findOrd(store.getStoreId(),user.getUserId());
+        if(ord==null){
+            ordService.saveOrUpdate(new Ord(store.getStoreId(),user.getUserId(),0,0));
+            ord=ordService.findOrd(store.getStoreId(),user.getUserId());
+        }
+        ReductionPlanController reductionPlanController=new ReductionPlanController();
+        ord.setTotalDiscount(reductionPlanController.bestPlan(ord.getTotalMoney()));
+        return ordService.saveOrUpdate(ord);
+    }
+
+    @ApiOperation(value = "刷新订单折扣")
+    @PostMapping("/fresh/discount")
+    public boolean plan(@RequestBody Discount discount,@RequestBody Ord ord){
+        ord.setTotalDiscount(ord.getTotalDiscount()+ discount.getDiscountMoney());
+        return ordService.saveOrUpdate(ord);
+    }
+
+    @ApiOperation(value = "修改订单状态")
+    @PostMapping("/state")
+    public boolean state(@RequestBody Ord ord, int n){
+        ord.setIsReturn(n);
+        if(n==1) ord.setOrdTime(new Date(System.currentTimeMillis()));
+        return ordService.saveOrUpdate(ord);
+    }
+
+
 
     @ApiOperation(value = "修改订单")
     @PostMapping("/update")

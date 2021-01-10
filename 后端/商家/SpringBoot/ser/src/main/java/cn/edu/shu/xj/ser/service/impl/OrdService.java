@@ -30,4 +30,8 @@ public class OrdService extends ServiceImpl<OrdMapper, Ord> implements IOrdServi
     public float averageConsumption(long storeId,int isReturn){
         return ordMapper.averageConsumption(storeId,isReturn);
     }
+
+    public Ord findOrd(long storeId,long userId){
+        return ordMapper.findOrd(storeId,userId);
+    }
 }
