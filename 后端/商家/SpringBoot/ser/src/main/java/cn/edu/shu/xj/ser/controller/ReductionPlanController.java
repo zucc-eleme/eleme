@@ -12,6 +12,8 @@ import lombok.Data;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
+import java.util.List;
+
 @Api(tags = "测试接口")
 @RestController
 @RequestMapping("/plan")
@@ -39,5 +41,12 @@ public class ReductionPlanController {
         LambdaQueryWrapper<ReductionPlan> qw=new QueryWrapper<ReductionPlan>().lambda().like(ReductionPlan::getStoreId,store.getStoreId());
         if(reductionPlanService.remove(qw)) return "删除成功";
         return "删除失败";
+    }
+
+    @ApiOperation(value = "显示相关满减方案")
+    @GetMapping("/show/by/store")
+    public List<ReductionPlan> show(Store store){
+        LambdaQueryWrapper<ReductionPlan> qw=new QueryWrapper<ReductionPlan>().lambda().like(ReductionPlan::getStoreId,store.getStoreId());
+        return reductionPlanService.list(qw);
     }
 }

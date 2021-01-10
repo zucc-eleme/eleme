@@ -4,6 +4,8 @@ import cn.edu.shu.xj.ser.entity.UserAddress;
 import cn.edu.shu.xj.ser.mapper.UserAddressMapper;
 import cn.edu.shu.xj.ser.service.IUserAddressService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.stereotype.Service;
 
+@Service
 public class UserAddressService extends ServiceImpl<UserAddressMapper, UserAddress> implements IUserAddressService {
 }

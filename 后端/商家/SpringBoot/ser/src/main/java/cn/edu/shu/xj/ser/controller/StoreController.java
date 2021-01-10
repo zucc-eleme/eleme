@@ -81,36 +81,9 @@ public class StoreController {
         return "登陆成功";
     }
 
-    @ApiOperation(value = "商家评分")
-    @GetMapping("/storeRating")
-    public float storesRating(Store store){
-        LambdaQueryWrapper<GoodsEvaluation> qw=new QueryWrapper<GoodsEvaluation>().lambda().like(GoodsEvaluation::getStoreId,store.getStoreId());
-        List<GoodsEvaluation> evaluations= goodsEvaluationService.list(qw);
-        int n=goodsEvaluationService.count(qw);
-        if(n==0) return 0;
-        float sum=0;
-        for(GoodsEvaluation goodsEvaluation:evaluations){
-            sum+=goodsEvaluation.getEvaluationStar();
-        }
-        return sum/n;
-    }
 
-    @ApiOperation(value = "人平均消费")
-    @GetMapping("/aveConsumption")
-    public float averageConsumption(Store store){
-        LambdaQueryWrapper<Ord> qw=new QueryWrapper<Ord>().lambda().like(Ord::getStoreId,store.getStoreId());
-        List<Ord> ords= ordService.list(qw);
-        int n=0;
-        float sum=0;
-        for(Ord ord:ords){
-            if(ord.getIsReturn()==2){
-                n++;
-                sum+=ord.getTotalMoney();
-            }
-        }
-        if(n==0) return 0;
-        return sum/n;
-    }
+
+
 
     @ApiOperation(value = "根据类别显示商家")
     @GetMapping("/storeClass")
@@ -162,11 +135,12 @@ public class StoreController {
     @ApiOperation(value = "按好评从高到低排序")
     @GetMapping("/sortByRating")
     public List<Store> sortByRates(List<Store> stores){
+        StoreEvaluationController storeEvaluationController=new StoreEvaluationController();
         Collections.sort(stores,new Comparator<Store>(){
             @Override
             public int compare(Store o1, Store o2) {
-                float rate1=storesRating(o1);
-                float rate2=storesRating(o2);
+                float rate1=storeEvaluationController.storesRating(o1);
+                float rate2=storeEvaluationController.storesRating(o2);
                 if(rate1>rate2) return -1;
                 else if(rate1==rate2) return 0;
                 else return 1;
@@ -175,19 +149,22 @@ public class StoreController {
         return stores;
     }
 
-    @ApiOperation(value = "按人均消费从高到低排序")
+    @ApiOperation(value = "按人均消费从低到高排序")
     @GetMapping("/sortByConsumption")
     public List<Store> sortByConsumption(List<Store> stores){
+        OrdController ordController=new OrdController();
         Collections.sort(stores,new Comparator<Store>(){
             @Override
             public int compare(Store o1, Store o2) {
-                float com1=averageConsumption(o1);
-                float com2=averageConsumption(o2);
-                if(com1>com2) return -1;
+                float com1=ordController.averageConsumption(o1);
+                float com2=ordController.averageConsumption(o2);
+                if(com1>com2) return 1;
                 else if(com1==com2) return 0;
-                else return 1;
+                else return -1;
             }
         });
         return stores;
     }
+
+
 }
