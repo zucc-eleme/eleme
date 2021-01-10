@@ -12,6 +12,7 @@ import io.swagger.annotations.ApiOperation;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 import org.springframework.web.servlet.ModelAndView;
+import sun.security.provider.MD2;
 
 import java.util.List;
 
@@ -26,6 +27,8 @@ public class UserLoginController {
     @GetMapping("/query/userId")
     public User queryUserId(long userId){
         User oneuser = userService.findOneUser(userId);
+        String pwd = Md5Utils.convertMD5(oneuser.getUserPwd());
+        oneuser.setUserPwd(pwd);
         return oneuser;
     }
 
@@ -33,8 +36,8 @@ public class UserLoginController {
     @GetMapping("/query/userPhone")
     public User queryUserPhone(String userPhone){
         User oneuser = userService.findOneUserByPhone(userPhone);
-//        String pwd = Md5Utils.convertMD5(oneuser.getUserPwd());
-//        oneuser.setUserPwd(pwd);
+        String pwd = Md5Utils.convertMD5(oneuser.getUserPwd());
+        oneuser.setUserPwd(pwd);
         return oneuser;
     }
 
@@ -80,7 +83,7 @@ public class UserLoginController {
 //            return success;
 //        }
 ////        判断数据库中是否存在用户
-//        User oneuser = userService.findOneUser(userPhone);
+//        User oneuser = userService.findOneUserByPhone(userPhone);
 //        if(oneuser==null){
 //            User newuser = new User();
 //            //对密码进行md5加密,然后保存到数据库中

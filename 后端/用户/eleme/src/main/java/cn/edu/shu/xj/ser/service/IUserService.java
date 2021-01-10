@@ -9,4 +9,5 @@ public interface IUserService extends IService<User> {
     User findOneUser(long userId);
     User findOneUserByPhone(String userPhone);
     long getMaxUserId();
+    boolean changeUserPwd(String userPhone,String userPwd);
 }

@@ -18,4 +18,5 @@ public class UserService extends ServiceImpl<UserMapper,User> implements IUserSe
     }
     public User findOneUserByPhone(String userPhone){ return userMapper.findOneUserByPhone(userPhone); }
     public long getMaxUserId(){return userMapper.getMaxUserId();}
+    public boolean changeUserPwd(String userPhone,String userPwd){return userMapper.changeUserPwd(userPhone,userPwd);}
 }
