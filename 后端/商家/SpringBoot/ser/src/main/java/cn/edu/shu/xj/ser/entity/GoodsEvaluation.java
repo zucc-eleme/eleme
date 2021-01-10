@@ -1,6 +1,8 @@
 package cn.edu.shu.xj.ser.entity;
 
+import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableField;
+import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
 import lombok.Data;
 
@@ -9,6 +11,8 @@ import java.util.Date;
 @Data
 @TableName("goods_evaluation")
 public class GoodsEvaluation {
+    @TableId(value = "evaluate_id",type = IdType.AUTO)
+    private long evaluateId;
     @TableField(value = "store_id")
     private long storeId;
     @TableField(value = "user_id")
@@ -23,6 +27,14 @@ public class GoodsEvaluation {
     private String evaluationImg;
     @TableField(value = "evaluation_time")
     private Date evaluationTime;
+
+    public long getEvaluateId() {
+        return evaluateId;
+    }
+
+    public void setEvaluateId(long evaluateId) {
+        this.evaluateId = evaluateId;
+    }
 
     public long getStoreId() {
         return storeId;

@@ -13,4 +13,6 @@ public interface IOrdService extends IService<Ord> {
     float profitInOneDay(int day, long storeId);
 
     int saveVolumeBeforeTime(int day, long storeId);
+
+    float averageConsumption(long storeId, int isReturn);
 }

@@ -4,6 +4,8 @@ import cn.edu.shu.xj.ser.entity.Discount;
 import cn.edu.shu.xj.ser.mapper.DiscountMapper;
 import cn.edu.shu.xj.ser.service.IDiscountService;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import org.springframework.stereotype.Service;
 
+@Service
 public class DiscountService extends ServiceImpl<DiscountMapper, Discount> implements IDiscountService {
 }

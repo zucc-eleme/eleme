@@ -26,4 +26,8 @@ public class OrdService extends ServiceImpl<OrdMapper, Ord> implements IOrdServi
     public int saveVolumeBeforeTime(int day, long storeId){
         return ordMapper.saveVolumeBeforeTime(day,storeId);
     }
+
+    public float averageConsumption(long storeId,int isReturn){
+        return ordMapper.averageConsumption(storeId,isReturn);
+    }
 }

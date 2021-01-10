@@ -1,60 +1,137 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
-  <component name="AutoImportSettings">
-    <option name="autoReloadType" value="SELECTIVE" />
-  </component>
   <component name="ChangeListManager">
-    <list default="true" id="cb2c543f-ed7e-4954-ac32-0df5239da1da" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/../../../../前端/微信小程序/Pages/login/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../前端/微信小程序/Pages/login/index.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../前端/微信小程序/Pages/login/index.wxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../前端/微信小程序/Pages/login/index.wxss" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../前端/微信小程序/Pages/login/test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../前端/微信小程序/Pages/test.txt" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../前端/微信小程序/Pages/user/index.js" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../前端/微信小程序/Pages/user/index.json" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../前端/微信小程序/Pages/user/index.less" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../前端/微信小程序/Pages/user/index.wxml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../../../前端/微信小程序/Pages/user/test.txt" beforeDir="false" />
-    </list>
+    <list default="true" id="13b4d8e7-9f7e-427e-8313-91dbe604dc7b" name="Default Changelist" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="Git.Settings">
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
-  </component>
-  <component name="MavenImportPreferences">
-    <option name="generalSettings">
-      <MavenGeneralSettings>
-        <option name="mavenHome" value="E:\Program Files\JetBrains\IntelliJ IDEA 2020.2.3\plugins\maven\lib\maven3" />
-      </MavenGeneralSettings>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Interface" />
+      </list>
     </option>
   </component>
-  <component name="ProjectId" id="1lluobhea8DiLi4nBRyIaIQOoi9" />
-  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectId" id="1kUWmWYQrnnk6vG3tbXPwE5yQPY" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="RequestMappingsPanelOrder0" value="0" />
+    <property name="RequestMappingsPanelOrder1" value="1" />
+    <property name="RequestMappingsPanelWidth0" value="75" />
+    <property name="RequestMappingsPanelWidth1" value="75" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.editor" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/src/main/java/cn/edu/shu/xj/ser/mapper" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="restartRequiresConfirmation" value="false" />
   </component>
-  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="RecentsManager">
+    <key name="CopyClassDialog.RECENTS_KEY">
+      <recent name="cn.edu.shu.xj.ser.controller" />
+      <recent name="cn.edu.shu.xj.ser.service" />
+      <recent name="cn.edu.shu.xj.ser.service.impl" />
+      <recent name="cn.edu.shu.xj.ser.mapper" />
+      <recent name="cn.edu.shu.xj.ser.entity" />
+    </key>
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Users\Dragon\IdeaProjects\SpringBoot_Vue-master\ser\src\main\java\cn\edu\shu\xj\ser\mapper" />
+    </key>
+  </component>
+  <component name="RunManager">
+    <configuration name="SerApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="ser" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="cn.edu.shu.xj.ser.SerApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="cb2c543f-ed7e-4954-ac32-0df5239da1da" name="Default Changelist" comment="" />
-      <created>1608184174966</created>
+      <changelist id="13b4d8e7-9f7e-427e-8313-91dbe604dc7b" name="Default Changelist" comment="" />
+      <created>1605755809583</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1608184174966</updated>
-      <workItem from="1608184176049" duration="5000" />
+      <updated>1605755809583</updated>
+      <workItem from="1605755813215" duration="808000" />
+      <workItem from="1605777147414" duration="1977000" />
+      <workItem from="1605779156064" duration="81000" />
+      <workItem from="1605834907141" duration="62000" />
+      <workItem from="1606834276823" duration="907000" />
+      <workItem from="1607303247408" duration="4268000" />
     </task>
     <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="2" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="1038" y="335" key="#com.intellij.ide.util.MemberChooser" timestamp="1607305700706">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state x="1038" y="335" key="#com.intellij.ide.util.MemberChooser/0.0.2560.1400/2560.-416.1080.1880@0.0.2560.1400" timestamp="1607305700706" />
+    <state width="2507" height="562" key="GridCell.Tab.0.bottom" timestamp="1607306856472">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2507" height="562" key="GridCell.Tab.0.bottom/0.0.2560.1400/2560.-416.1080.1880@0.0.2560.1400" timestamp="1607306856472" />
+    <state width="2507" height="562" key="GridCell.Tab.0.center" timestamp="1607306856472">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2507" height="562" key="GridCell.Tab.0.center/0.0.2560.1400/2560.-416.1080.1880@0.0.2560.1400" timestamp="1607306856472" />
+    <state width="2507" height="562" key="GridCell.Tab.0.left" timestamp="1607306856472">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2507" height="562" key="GridCell.Tab.0.left/0.0.2560.1400/2560.-416.1080.1880@0.0.2560.1400" timestamp="1607306856472" />
+    <state width="2507" height="562" key="GridCell.Tab.0.right" timestamp="1607306856472">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2507" height="562" key="GridCell.Tab.0.right/0.0.2560.1400/2560.-416.1080.1880@0.0.2560.1400" timestamp="1607306856472" />
+    <state width="2507" height="562" key="GridCell.Tab.1.bottom" timestamp="1607306856421">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2507" height="562" key="GridCell.Tab.1.bottom/0.0.2560.1400/2560.-416.1080.1880@0.0.2560.1400" timestamp="1607306856421" />
+    <state width="2507" height="562" key="GridCell.Tab.1.center" timestamp="1607306856421">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2507" height="562" key="GridCell.Tab.1.center/0.0.2560.1400/2560.-416.1080.1880@0.0.2560.1400" timestamp="1607306856421" />
+    <state width="2507" height="562" key="GridCell.Tab.1.left" timestamp="1607306856421">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2507" height="562" key="GridCell.Tab.1.left/0.0.2560.1400/2560.-416.1080.1880@0.0.2560.1400" timestamp="1607306856421" />
+    <state width="2507" height="562" key="GridCell.Tab.1.right" timestamp="1607306856421">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2507" height="562" key="GridCell.Tab.1.right/0.0.2560.1400/2560.-416.1080.1880@0.0.2560.1400" timestamp="1607306856421" />
+    <state width="2507" height="562" key="GridCell.Tab.2.bottom" timestamp="1607306856421">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2507" height="562" key="GridCell.Tab.2.bottom/0.0.2560.1400/2560.-416.1080.1880@0.0.2560.1400" timestamp="1607306856421" />
+    <state width="2507" height="562" key="GridCell.Tab.2.center" timestamp="1607306856421">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2507" height="562" key="GridCell.Tab.2.center/0.0.2560.1400/2560.-416.1080.1880@0.0.2560.1400" timestamp="1607306856421" />
+    <state width="2507" height="562" key="GridCell.Tab.2.left" timestamp="1607306856421">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2507" height="562" key="GridCell.Tab.2.left/0.0.2560.1400/2560.-416.1080.1880@0.0.2560.1400" timestamp="1607306856421" />
+    <state width="2507" height="562" key="GridCell.Tab.2.right" timestamp="1607306856421">
+      <screen x="0" y="0" width="2560" height="1400" />
+    </state>
+    <state width="2507" height="562" key="GridCell.Tab.2.right/0.0.2560.1400/2560.-416.1080.1880@0.0.2560.1400" timestamp="1607306856421" />
   </component>
 </project>
