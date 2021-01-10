@@ -135,6 +135,7 @@ DROP TABLE IF EXISTS `store`;
 CREATE TABLE `store` (
   `store_id` bigint(50) NOT NULL AUTO_INCREMENT,
   `store_class` varchar(200) DEFAULT NULL,
+  `store_picture` varchar(200) DEFAULT NULL,
   `store_name` varchar(50) DEFAULT NULL,
   `store_passwd` varchar(255) DEFAULT NULL,
   `store_address` varchar(200) DEFAULT NULL,
