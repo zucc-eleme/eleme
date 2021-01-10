@@ -9,9 +9,9 @@ import lombok.Data;
 @TableName("user_address")
 public class UserAddress {
     @TableField(value = "user_id")
-    private Long userId;     //记录用户id
+    private long userId;     //记录用户id
     @TableId(value = "address_id")
-    private Long addressId; //地址id
+    private long addressId; //地址id
     @TableField(value = "user_address")
     private String userAddress; //记录地址
     @TableField(value = "main_address")
@@ -25,20 +25,33 @@ public class UserAddress {
     @TableField(value = "address_type")
     private int addressType;   //地址类型，0是家，1是学校，2是公司，可以不设置
 
+    public UserAddress(){
+    }
 
-    public Long getAddressId() {
+    public UserAddress(long userId, long addressId, String userAddress, int mainAddress, String userName, int userSex, String addressDetail, int addressType) {
+        this.userId = userId;
+        this.addressId = addressId;
+        this.userAddress = userAddress;
+        this.mainAddress = mainAddress;
+        this.userName = userName;
+        this.userSex = userSex;
+        this.addressDetail = addressDetail;
+        this.addressType = addressType;
+    }
+
+    public long getAddressId() {
         return addressId;
     }
 
-    public void setAddressId(Long addressId) {
+    public void setAddressId(long addressId) {
         this.addressId = addressId;
     }
 
-    public Long getUserId() {
+    public long getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(long userId) {
         this.userId = userId;
     }
 

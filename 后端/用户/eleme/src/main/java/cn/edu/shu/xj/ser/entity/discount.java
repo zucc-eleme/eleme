@@ -19,10 +19,11 @@ public class Discount {//用户优惠券
     @TableField(value = "start_money")
     private float startMoney; //使用优惠券的最低价格
     @TableField(value = "store_id")
-    private Long storeId;
+    private long storeId;
 
     public Discount(){
     }
+
     public Discount(String discountId, Long userId, String discountName, float discountMoney, float startMoney, Long storeId) {
         this.discountId = discountId;
         this.userId = userId;
@@ -48,11 +49,11 @@ public class Discount {//用户优惠券
         this.discountId = discountId;
     }
 
-    public Long getUserId() {
+    public long getUserId() {
         return userId;
     }
 
-    public void setUserId(Long userId) {
+    public void setUserId(long userId) {
         this.userId = userId;
     }
 

@@ -73,7 +73,7 @@ public class DiscountController {
 //            return discount.getDiscountMoney()+" "+discount.getStartMoney();
             return false;
         //用户id需要存在
-        if(discount.getUserId()==null)
+        if(discount.getUserId()==0)
 //            return discount.getUserId()+"55";
             return false;
 //        商家id需要存在

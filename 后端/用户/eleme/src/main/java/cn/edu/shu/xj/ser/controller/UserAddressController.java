@@ -51,10 +51,14 @@ public class UserAddressController {
     @ApiOperation(value = "修改用户地址")
     @PostMapping("/change")
     public boolean changeUserAddress(@RequestBody UserAddress userAddress){
+        if(userAddress.getUserName()==null)
+            return false;
+        if(userAddress.getUserAddress()==null)
+            return false;
         if(userAddress.getMainAddress()==1)
             if(queryMainAddressByUserId(userAddress.getUserId())!=null)
                 return false;
-        return userAddressService.save(userAddress);
+        return userAddressService.saveOrUpdate(userAddress);
     }
 
     @ApiOperation(value = "通过用户id删除用户地址")

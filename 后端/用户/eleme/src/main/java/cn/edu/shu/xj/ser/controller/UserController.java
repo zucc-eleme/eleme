@@ -19,8 +19,10 @@ public class UserController {
     @ApiOperation(value = "用户修改信息")
     @PostMapping("/change/Info")
     public boolean changeinfo(@RequestBody User user){
+        User oneuser = userService.findOneUserByPhone(user.getUserPhone());
         SerApplication.currentUser = user;
-        return userService.save(user);
+        user.setUserId(oneuser.getUserId());
+        return userService.saveOrUpdate(user);
     }
 
 //    @ApiOperation(value = "用户修改密码")
