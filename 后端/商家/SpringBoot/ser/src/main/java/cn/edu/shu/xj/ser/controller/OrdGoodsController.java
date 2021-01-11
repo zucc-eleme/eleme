@@ -48,8 +48,8 @@ public class OrdGoodsController {
 
     @ApiOperation(value = "根据订单查看订单总额")
     @GetMapping("/totalMoney")
-    public float totalMoney(@RequestBody Ord ord){
-        return ordGoodsService.totalMoney(ord.getOrdId());
+    public float totalMoney(@RequestParam long ordId){
+        return ordGoodsService.totalMoney(ordId);
 
     }
 }

@@ -21,15 +21,15 @@ public class StoreEvaluationController {
 
     @ApiOperation(value = "按商家显示评价")
     @GetMapping("/listEvaluations")
-    public List<GoodsEvaluation> list(long storeId){
+    public List<GoodsEvaluation> list(@RequestParam long storeId){
         LambdaQueryWrapper<GoodsEvaluation> qw=new QueryWrapper<GoodsEvaluation>().lambda().like(GoodsEvaluation::getStoreId,storeId);
         return goodsEvaluationService.list(qw);
     }
 
     @ApiOperation(value = "商家评分")
     @GetMapping("/storeRating")
-    public float storesRating(Store store){
-        LambdaQueryWrapper<GoodsEvaluation> qw=new QueryWrapper<GoodsEvaluation>().lambda().like(GoodsEvaluation::getStoreId,store.getStoreId());
+    public float storesRating(@RequestParam long storeId){
+        LambdaQueryWrapper<GoodsEvaluation> qw=new QueryWrapper<GoodsEvaluation>().lambda().like(GoodsEvaluation::getStoreId,storeId);
         List<GoodsEvaluation> evaluations= goodsEvaluationService.list(qw);
         int n=goodsEvaluationService.count(qw);
         if(n==0) return 0;

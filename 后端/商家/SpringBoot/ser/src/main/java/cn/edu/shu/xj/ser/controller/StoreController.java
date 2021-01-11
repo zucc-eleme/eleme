@@ -71,7 +71,7 @@ public class StoreController {
 
     @ApiOperation(value = "商家登录")
     @GetMapping("/login")
-    public String login(String phone,String passwd){
+    public String login(@RequestParam String phone,@RequestParam String passwd){
         Store store=storeService.findOneStore(phone);
         passwd=Md5Utils.code(passwd);
         //System.out.println(store);
@@ -87,20 +87,20 @@ public class StoreController {
 
     @ApiOperation(value = "根据类别显示商家")
     @GetMapping("/storeClass")
-    public List<Store> storesByClass(String storeClass){
+    public List<Store> storesByClass(@RequestParam String storeClass){
         LambdaQueryWrapper<Store> qw=new QueryWrapper<Store>().lambda().like(Store::getStoreClass,storeClass);
         return storeService.list(qw);
     }
 
     @ApiOperation(value = "根据商品名显示商家")
     @GetMapping("/goodsName")
-    public List<Store> storesByGoods(String goodsName){
+    public List<Store> storesByGoods(@RequestParam String goodsName){
         return storeService.storesByGoods(goodsName);
     }
 
     @ApiOperation(value = "根据商家名显示商家")
     @GetMapping("/storeName")
-    public List<Store> storesByName(String storeName){
+    public List<Store> storesByName(@RequestParam String storeName){
         LambdaQueryWrapper<Store> qw=new QueryWrapper<Store>().lambda().like(Store::getStoreName,storeName);
         return storeService.list(qw);
     }
@@ -139,8 +139,8 @@ public class StoreController {
         Collections.sort(stores,new Comparator<Store>(){
             @Override
             public int compare(Store o1, Store o2) {
-                float rate1=storeEvaluationController.storesRating(o1);
-                float rate2=storeEvaluationController.storesRating(o2);
+                float rate1=storeEvaluationController.storesRating(o1.getStoreId());
+                float rate2=storeEvaluationController.storesRating(o2.getStoreId());
                 if(rate1>rate2) return -1;
                 else if(rate1==rate2) return 0;
                 else return 1;
@@ -156,8 +156,8 @@ public class StoreController {
         Collections.sort(stores,new Comparator<Store>(){
             @Override
             public int compare(Store o1, Store o2) {
-                float com1=ordController.averageConsumption(o1);
-                float com2=ordController.averageConsumption(o2);
+                float com1=ordController.averageConsumption(o1.getStoreId());
+                float com2=ordController.averageConsumption(o2.getStoreId());
                 if(com1>com2) return 1;
                 else if(com1==com2) return 0;
                 else return -1;

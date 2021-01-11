@@ -37,16 +37,16 @@ public class ReductionPlanController {
 
     @ApiOperation(value = "删除相关满减方案")
     @PostMapping("/delete/by/store")
-    public String remove(@RequestBody Store store){
-        LambdaQueryWrapper<ReductionPlan> qw=new QueryWrapper<ReductionPlan>().lambda().like(ReductionPlan::getStoreId,store.getStoreId());
+    public String removeByStore(@RequestParam long storeId){
+        LambdaQueryWrapper<ReductionPlan> qw=new QueryWrapper<ReductionPlan>().lambda().like(ReductionPlan::getStoreId,storeId);
         if(reductionPlanService.remove(qw)) return "删除成功";
         return "删除失败";
     }
 
     @ApiOperation(value = "显示相关满减方案")
     @GetMapping("/show/by/store")
-    public List<ReductionPlan> show(Store store){
-        LambdaQueryWrapper<ReductionPlan> qw=new QueryWrapper<ReductionPlan>().lambda().like(ReductionPlan::getStoreId,store.getStoreId());
+    public List<ReductionPlan> show(@RequestParam long storeId){
+        LambdaQueryWrapper<ReductionPlan> qw=new QueryWrapper<ReductionPlan>().lambda().like(ReductionPlan::getStoreId,storeId);
         return reductionPlanService.list(qw);
     }
 

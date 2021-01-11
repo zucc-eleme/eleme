@@ -51,8 +51,8 @@ public class OrdController {
 
     @ApiOperation(value = "人平均消费")
     @GetMapping("/aveConsumption")
-    public float averageConsumption(Store store){
-        LambdaQueryWrapper<Ord> qw=new QueryWrapper<Ord>().lambda().like(Ord::getStoreId,store.getStoreId());
+    public float averageConsumption(long storeId){
+        LambdaQueryWrapper<Ord> qw=new QueryWrapper<Ord>().lambda().like(Ord::getStoreId,storeId);
         List<Ord> ords= ordService.list(qw);
         int n=0;
         float sum=0;
@@ -68,37 +68,37 @@ public class OrdController {
 
     @ApiOperation(value = "创建订单")
     @PostMapping("/add")
-    public boolean add(@RequestBody Store store, @RequestBody User user){
-        Ord ord=new Ord(store.getStoreId(),user.getUserId(),0,0);
+    public boolean add(@RequestParam long storeId, @RequestParam long userId){
+        Ord ord=new Ord(storeId,userId,0,0);
         return ordService.saveOrUpdate(ord);
     }
 
     @ApiOperation(value = "查找订单")
     @GetMapping("/search")
-    public Ord search(@RequestBody Store store, @RequestBody User user){
-        return ordService.findOrd(store.getStoreId(),user.getUserId());
+    public Ord search(@RequestParam long storeId, @RequestParam long userId){
+        return ordService.findOrd(storeId,userId);
     }
 
     @ApiOperation(value = "刷新订单总额")
     @PostMapping("/fresh/totalMoney")
-    public boolean totalMoney(@RequestBody Store store, @RequestBody User user){
-        Ord ord=ordService.findOrd(store.getStoreId(),user.getUserId());
+    public boolean totalMoney(@RequestParam long storeId, @RequestParam long userId){
+        Ord ord=ordService.findOrd(storeId,userId);
         if(ord==null){
-            ordService.saveOrUpdate(new Ord(store.getStoreId(),user.getUserId(),0,0));
-            ord=ordService.findOrd(store.getStoreId(),user.getUserId());
+            ordService.saveOrUpdate(new Ord(storeId,userId,0,0));
+            ord=ordService.findOrd(storeId,userId);
         }
         OrdGoodsController ordGoodsController=new OrdGoodsController();
-        ord.setTotalMoney(ordGoodsController.totalMoney(ord));
+        ord.setTotalMoney(ordGoodsController.totalMoney(ord.getOrdId()));
         return ordService.saveOrUpdate(ord);
     }
 
     @ApiOperation(value = "刷新订单满减")
     @PostMapping("/fresh/plan")
-    public boolean plan(@RequestBody Store store, @RequestBody User user){
-        Ord ord=ordService.findOrd(store.getStoreId(),user.getUserId());
+    public boolean plan(@RequestParam long storeId, @RequestParam long userId){
+        Ord ord=ordService.findOrd(storeId,userId);
         if(ord==null){
-            ordService.saveOrUpdate(new Ord(store.getStoreId(),user.getUserId(),0,0));
-            ord=ordService.findOrd(store.getStoreId(),user.getUserId());
+            ordService.saveOrUpdate(new Ord(storeId,userId,0,0));
+            ord=ordService.findOrd(storeId,userId);
         }
         ReductionPlanController reductionPlanController=new ReductionPlanController();
         ord.setTotalDiscount(reductionPlanController.bestPlan(ord.getTotalMoney()));
