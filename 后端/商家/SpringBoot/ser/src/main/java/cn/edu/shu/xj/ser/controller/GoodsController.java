@@ -65,8 +65,8 @@ public class GoodsController {
     }
 
     @ApiOperation(value = "商家内按类别显示商品")
-    @GetMapping("/list/by/class")
-    public List<Goods> listByClassInStore(@RequestParam String className,@RequestParam long storeId){
+    @GetMapping("/list/in/class")
+    public List<Goods> listByClassInStore(long storeId,String className){
         return goodsService.listByClassInStore(storeId,className);
     }
 
