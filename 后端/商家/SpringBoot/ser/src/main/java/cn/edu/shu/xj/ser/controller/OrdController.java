@@ -79,6 +79,13 @@ public class OrdController {
         return ordService.findOrd(storeId,userId);
     }
 
+    @ApiOperation(value = "查找订单")
+    @GetMapping("/search/by/user")
+    public List<Ord> searchByUser(@RequestParam long userId){
+        LambdaQueryWrapper<Ord> qw=new QueryWrapper<Ord>().lambda().like(Ord::getUserId,userId);
+        return ordService.list(qw);
+    }
+
     @ApiOperation(value = "刷新订单总额")
     @PostMapping("/fresh/totalMoney")
     public boolean totalMoney(@RequestParam long storeId, @RequestParam long userId){
