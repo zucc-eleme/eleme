@@ -27,6 +27,16 @@ public class OrdController {
         return ordService.count(qw);
     }
 
+    @ApiOperation(value = "订单状态")
+    @GetMapping("/ord/by/n")
+    public List<Ord> ordNumByStore(List<Ord> ords, int n){
+        List<Ord> newOrd=new ArrayList<>();
+        for(Ord ord:ords){
+            if(ord.getIsReturn()==n) newOrd.add(ord);
+        }
+        return newOrd;
+    }
+
     @ApiOperation(value = "查询一定时间内的订单")
     @GetMapping("/time/by/store")
     public List<Ord> ordsBeforeTime(int day, long storeId){
