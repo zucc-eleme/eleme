@@ -16,6 +16,8 @@ public class OrdGoods {
     @TableField(value = "goods_price")
     private float goodsPrice;
 
+    public OrdGoods(){}
+
     public OrdGoods(long ordId, String goodsName, int goodsNum, float goodsPrice) {
         this.ordId = ordId;
         this.goodsName = goodsName;

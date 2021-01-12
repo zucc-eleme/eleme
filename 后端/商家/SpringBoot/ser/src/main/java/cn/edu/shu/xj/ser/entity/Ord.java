@@ -44,6 +44,8 @@ public class Ord {
     @TableField(value = "is_return")
     private int isReturn;
 
+    public Ord(){}
+
     public Ord(long ordId, long userId, long storeId, long riderId, float totalMoney, float totalDiscount, Date ordTime, float riderGet, int isReturn) {
         this.ordId = ordId;
         this.userId = userId;

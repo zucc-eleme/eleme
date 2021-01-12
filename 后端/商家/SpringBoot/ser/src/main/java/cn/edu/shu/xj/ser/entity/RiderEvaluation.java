@@ -25,4 +25,72 @@ public class RiderEvaluation {
     private float riderStars;
     @TableField(value = "evaluate_time")
     private Date evaluateTime;
+
+    public RiderEvaluation(){}
+
+    public RiderEvaluation(long evaluationId, long riderId, long userId, String userName, String riderEvaluate, float riderStars, Date evaluateTime) {
+        this.evaluationId = evaluationId;
+        this.riderId = riderId;
+        this.userId = userId;
+        this.userName = userName;
+        this.riderEvaluate = riderEvaluate;
+        this.riderStars = riderStars;
+        this.evaluateTime = evaluateTime;
+    }
+
+    public long getEvaluationId() {
+        return evaluationId;
+    }
+
+    public void setEvaluationId(long evaluationId) {
+        this.evaluationId = evaluationId;
+    }
+
+    public long getRiderId() {
+        return riderId;
+    }
+
+    public void setRiderId(long riderId) {
+        this.riderId = riderId;
+    }
+
+    public long getUserId() {
+        return userId;
+    }
+
+    public void setUserId(long userId) {
+        this.userId = userId;
+    }
+
+    public String getUserName() {
+        return userName;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public String getRiderEvaluate() {
+        return riderEvaluate;
+    }
+
+    public void setRiderEvaluate(String riderEvaluate) {
+        this.riderEvaluate = riderEvaluate;
+    }
+
+    public float getRiderStars() {
+        return riderStars;
+    }
+
+    public void setRiderStars(float riderStars) {
+        this.riderStars = riderStars;
+    }
+
+    public Date getEvaluateTime() {
+        return evaluateTime;
+    }
+
+    public void setEvaluateTime(Date evaluateTime) {
+        this.evaluateTime = evaluateTime;
+    }
 }

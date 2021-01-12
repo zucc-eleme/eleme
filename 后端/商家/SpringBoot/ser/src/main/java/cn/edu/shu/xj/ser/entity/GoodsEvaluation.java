@@ -28,6 +28,19 @@ public class GoodsEvaluation {
     @TableField(value = "evaluation_time")
     private Date evaluationTime;
 
+    public GoodsEvaluation(){}
+
+    public GoodsEvaluation(long evaluateId, long storeId, long userId, String userName, String evaluationContent, float evaluationStar, String evaluationImg, Date evaluationTime) {
+        this.evaluateId = evaluateId;
+        this.storeId = storeId;
+        this.userId = userId;
+        this.userName = userName;
+        this.evaluationContent = evaluationContent;
+        this.evaluationStar = evaluationStar;
+        this.evaluationImg = evaluationImg;
+        this.evaluationTime = evaluationTime;
+    }
+
     public long getEvaluateId() {
         return evaluateId;
     }
