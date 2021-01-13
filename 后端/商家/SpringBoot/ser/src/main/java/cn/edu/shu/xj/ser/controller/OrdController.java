@@ -86,9 +86,12 @@ public class OrdController {
     @ApiOperation(value = "创建订单")
     @PostMapping("/save")
     public boolean save(@RequestParam long storeId, @RequestParam long userId,@RequestBody List<OrdGoods> list){
-        Ord ord=new Ord(storeId,userId,0,0);
-        if(!ordService.saveOrUpdate(ord)) return false;
-        ord=ordService.findOrd(storeId, userId);
+        Ord ord=null;
+        if(ordService.findOrd(storeId, userId)!=null) ord=ordService.findOrd(storeId, userId);
+        else {
+            if (!ordService.saveOrUpdate(new Ord(storeId, userId, 0, 0))) return false;
+            ord = ordService.findOrd(storeId, userId);
+        }
         OrdGoodsController ordGoodsController=new OrdGoodsController();
         return ordGoodsController.saveList(ord.getOrdId(),list);
     }
