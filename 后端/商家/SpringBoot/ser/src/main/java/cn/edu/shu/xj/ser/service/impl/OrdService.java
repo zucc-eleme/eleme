@@ -34,4 +34,12 @@ public class OrdService extends ServiceImpl<OrdMapper, Ord> implements IOrdServi
     public Ord findOrd(long storeId,long userId){
         return ordMapper.findOrd(storeId,userId);
     }
+
+    public Ord findOneOrder(String ordid){
+        return ordMapper.findOneOrder(ordid);
+    }
+
+    public List<Ord> queryOrd(long storeId,long isReturn){
+        return ordMapper.queryOrd(storeId,isReturn);
+    }
 }

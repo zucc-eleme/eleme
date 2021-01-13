@@ -36,10 +36,11 @@ public class Ord {
     @TableField(value = "rider_get")
     private float riderGet;
     /*
-    **0表示创建但未下单
-    * 1表示已下单但未送达
-    * 2表示已退单
-    * 3表示订单已送达
+     **0表示创建但未下单
+     * 1表示已下单但未配送
+     * 2表示已退单
+     * 3表示订单已送达
+     * 4表示订单配送中（骑手接单）
      */
     @TableField(value = "is_return")
     private int isReturn;

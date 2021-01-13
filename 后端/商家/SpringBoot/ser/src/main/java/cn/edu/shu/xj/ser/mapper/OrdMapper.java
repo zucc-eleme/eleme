@@ -26,4 +26,14 @@ public interface OrdMapper extends BaseMapper<Ord> {
 
     @Select("SELECT * FROM ord WHERE store_id=#{storeId} AND user_id=#{userId}  AND is_return=0")
     Ord findOrd(@Param("storeId")long storeId,@Param("userId")long userId);
+
+    /**
+     * @param ordid
+     * @return
+     */
+    @Select("SELECT * FROM ord WHERE ord_id =#{ordid} ")
+    Ord findOneOrder(@Param("ordid") String ordid);
+
+    @Select("SELECT * FROM store WHERE store_id=#{storeId} AND is_return={isReturn}")
+    List<Ord> queryOrd(@Param("storeId")long storeId,@Param("isReturn")long isReturn);
 }

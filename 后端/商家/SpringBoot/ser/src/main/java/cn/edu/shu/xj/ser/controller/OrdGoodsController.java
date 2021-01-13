@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Api(tags = "测试接口")
+@Api(tags = "订单商品接口")
 @RestController
 @RequestMapping("/ordGoods")
 public class OrdGoodsController {

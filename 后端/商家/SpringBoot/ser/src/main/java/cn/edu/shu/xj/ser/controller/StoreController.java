@@ -22,7 +22,7 @@ import org.springframework.web.bind.annotation.*;
 import javax.annotation.Resource;
 import java.util.*;
 
-@Api(tags = "测试接口")
+@Api(tags = "商家接口")
 @RestController
 @RequestMapping("/store")
 public class StoreController {

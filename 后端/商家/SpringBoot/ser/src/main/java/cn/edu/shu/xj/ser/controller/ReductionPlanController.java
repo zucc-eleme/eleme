@@ -14,7 +14,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Api(tags = "测试接口")
+@Api(tags = "满减方案接口")
 @RestController
 @RequestMapping("/plan")
 public class ReductionPlanController {

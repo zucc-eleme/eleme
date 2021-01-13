@@ -20,7 +20,6 @@ public class Discount {
     private float discountMoney;
     @TableField(value = "start_money")
     private float startMoney;
-    public Discount(){}
 
     public Discount(long discountId, long userId, long storeId, String discountName, float discountMoney, float startMoney) {
         this.discountId = discountId;
@@ -30,6 +29,8 @@ public class Discount {
         this.discountMoney = discountMoney;
         this.startMoney = startMoney;
     }
+
+    public Discount(){}
 
     public long getDiscountId() {
         return discountId;

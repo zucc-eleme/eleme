@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@Api(tags = "测试接口")
+@Api(tags = "订单接口")
 @RestController
 @RequestMapping("/ord")
 public class OrdController {
@@ -149,5 +149,29 @@ public class OrdController {
     @PostMapping("/remove")
     public boolean remove(@RequestBody Ord ord){
         return ordService.removeById(ord.getOrdId());
+    }
+
+    @ApiOperation(value = "骑手查询已接订单")
+    @GetMapping("/query/ord/by/rider")
+    public List<Ord> queryOrdByRiderId(@RequestParam long riderId){
+        LambdaQueryWrapper<Ord> qw=new QueryWrapper<Ord>().lambda().like(Ord::getRiderId,riderId);
+        return ordService.list(qw);
+    }
+
+    @ApiOperation(value = "查询可接订单")
+    @GetMapping("/query/ord")
+    public List<Ord> queryOrd(@RequestParam long storeId){
+        return ordService.queryOrd(storeId,1);
+    }
+
+    @ApiOperation(value = "骑手接单")
+    @GetMapping("/rider/get")
+    public String riderGet(@RequestParam long ordId,@RequestParam long riderId){
+        Ord ord=ordService.getById(ordId);
+        if(ord.getIsReturn()!=1) return "操作错误";
+        ord.setRiderId(riderId);
+        ord.setIsReturn(4);
+        if(ordService.saveOrUpdate(ord)) return "接单成功";
+        return "接单失败";
     }
 }
