@@ -112,6 +112,4 @@ public class DiscountController {
         LambdaQueryWrapper<Discount> qw = new QueryWrapper<Discount>().lambda().eq(Discount::getDiscountId,discountId);
         return discountService.remove(qw);
     }
-    
-
 }

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.shu.xj.ser.mapper.RiderEvaluationMapper" >
+    <!-- 通用查询映射结果 -->
+    <resultMap id="RiderEvaluationResultMap" type="cn.edu.shu.xj.ser.entity.RiderEvaluation">
+        <result column="rider_id" property="riderId"/>
+        <result column="user_id" property="userId"/>
+        <result column="user_name" property="userName"/>
+        <result column="rider_evaluate" property="riderEvaluate"/>
+        <result column="rider_stars" property="riderStars"/>
+        <result column="evaluate_time" property="evaluateTime"/>
+    </resultMap>
+</mapper>
