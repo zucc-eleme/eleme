@@ -15,4 +15,8 @@ public interface IOrdService extends IService<Ord> {
     int saveVolumeBeforeTime(int day, long storeId);
 
     float averageConsumption(long storeId, int isReturn);
+
+    Ord findOrd(long storeId,long userId);
+
+    List<Ord> queryOrd(long storeId,long isReturn);
 }

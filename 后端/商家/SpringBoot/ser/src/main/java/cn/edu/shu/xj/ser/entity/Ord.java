@@ -11,24 +11,41 @@ import java.util.Date;
 @Data
 @TableName("ord")
 public class Ord {
+    //订单id
     @TableId(value = "ord_id",type = IdType.AUTO)
     private long ordId;
+    //用户id
     @TableField(value = "user_id")
     private long userId;
+    //商家id
     @TableField(value = "store_id")
     private long storeId;
+    //骑手id
     @TableField(value = "rider_id")
     private long riderId;
+    //商品总值
     @TableField(value = "total_money")
     private float totalMoney;
+    //满减+折扣
     @TableField(value = "total_discount")
     private float totalDiscount;
+    //下单时间
     @TableField(value = "ord_time")
     private Date ordTime;
+    //骑手运送费用
     @TableField(value = "rider_get")
     private float riderGet;
+    /*
+     **0表示创建但未下单
+     * 1表示已下单但未配送
+     * 2表示已退单
+     * 3表示订单已送达
+     * 4表示订单配送中（骑手接单）
+     */
     @TableField(value = "is_return")
     private int isReturn;
+
+    public Ord(){}
 
     public Ord(long ordId, long userId, long storeId, long riderId, float totalMoney, float totalDiscount, Date ordTime, float riderGet, int isReturn) {
         this.ordId = ordId;
@@ -51,6 +68,13 @@ public class Ord {
         this.ordTime = ordTime;
         this.riderGet = riderGet;
         this.isReturn = isReturn;
+    }
+
+    public Ord(long userId, long storeId, float totalMoney, int isReturn) {
+        this.userId = userId;
+        this.storeId = storeId;
+        this.totalMoney = totalMoney;
+        this.isReturn=isReturn;
     }
 
     public long getOrdId() {

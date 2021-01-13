@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Api(tags = "测试接口")
+@Api(tags = "商品接口")
 @RestController
 @RequestMapping("/goods")
 public class GoodsController {
@@ -45,8 +45,8 @@ public class GoodsController {
 
     @ApiOperation(value = "删除相关商品")
     @PostMapping("/delete/by/store")
-    public boolean delete(@RequestBody Store store){
-        LambdaQueryWrapper<Goods> qw=new QueryWrapper<Goods>().lambda().like(Goods::getStoreId,store.getStoreId());
+    public boolean deleteByStore(@RequestParam long storeId){
+        LambdaQueryWrapper<Goods> qw=new QueryWrapper<Goods>().lambda().like(Goods::getStoreId,storeId);
         return goodsService.remove(qw);
     }
 
@@ -64,10 +64,22 @@ public class GoodsController {
         return goodsService.list(qw);
     }
 
+    @ApiOperation(value = "商家内按类别显示商品")
+    @GetMapping("/list/in/class")
+    public List<Goods> listByClassInStore(long storeId,String className){
+        return goodsService.listByClassInStore(storeId,className);
+    }
+
     @ApiOperation(value = "按商品名显示商品")
     @GetMapping("/list/by/name")
     public List<Goods> listByName(@RequestParam String goodsName){
         LambdaQueryWrapper<Goods> qw=new QueryWrapper<Goods>().lambda().like(Goods::getGoodsName,goodsName);
         return goodsService.list(qw);
+    }
+
+    @ApiOperation(value = "商家内所有类别")
+    @GetMapping("/class")
+    public List<String> ClassInStore(@RequestParam long storeId){
+        return goodsService.classInStore(storeId);
     }
 }

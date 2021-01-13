@@ -1,8 +1,6 @@
 package cn.edu.shu.xj.ser.controller;
 
-import cn.edu.shu.xj.ser.entity.Goods;
-import cn.edu.shu.xj.ser.entity.Ord;
-import cn.edu.shu.xj.ser.entity.Store;
+import cn.edu.shu.xj.ser.entity.*;
 import cn.edu.shu.xj.ser.service.IOrdService;
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
@@ -12,9 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.ArrayList;
+import java.util.Date;
 import java.util.List;
 
-@Api(tags = "测试接口")
+@Api(tags = "订单接口")
 @RestController
 @RequestMapping("/ord")
 public class OrdController {
@@ -26,6 +25,16 @@ public class OrdController {
     public int ordNumByStore(@RequestParam long storeId){
         LambdaQueryWrapper<Ord> qw=new QueryWrapper<Ord>().lambda().like(Ord::getStoreId,storeId);
         return ordService.count(qw);
+    }
+
+    @ApiOperation(value = "订单状态")
+    @GetMapping("/ord/by/n")
+    public List<Ord> ordNumByStore(List<Ord> ords, int n){
+        List<Ord> newOrd=new ArrayList<>();
+        for(Ord ord:ords){
+            if(ord.getIsReturn()==n) newOrd.add(ord);
+        }
+        return newOrd;
     }
 
     @ApiOperation(value = "查询一定时间内的订单")
@@ -52,8 +61,8 @@ public class OrdController {
 
     @ApiOperation(value = "人平均消费")
     @GetMapping("/aveConsumption")
-    public float averageConsumption(Store store){
-        LambdaQueryWrapper<Ord> qw=new QueryWrapper<Ord>().lambda().like(Ord::getStoreId,store.getStoreId());
+    public float averageConsumption(long storeId){
+        LambdaQueryWrapper<Ord> qw=new QueryWrapper<Ord>().lambda().like(Ord::getStoreId,storeId);
         List<Ord> ords= ordService.list(qw);
         int n=0;
         float sum=0;
@@ -67,11 +76,68 @@ public class OrdController {
         return sum/n;
     }
 
-    @ApiOperation(value = "添加订单")
+    @ApiOperation(value = "创建订单")
     @PostMapping("/add")
-    public boolean add(@RequestBody Ord ord){
+    public boolean add(@RequestParam long storeId, @RequestParam long userId){
+        Ord ord=new Ord(storeId,userId,0,0);
         return ordService.saveOrUpdate(ord);
     }
+
+    @ApiOperation(value = "查找订单")
+    @GetMapping("/search")
+    public Ord search(@RequestParam long storeId, @RequestParam long userId){
+        return ordService.findOrd(storeId,userId);
+    }
+
+    @ApiOperation(value = "查找订单")
+    @GetMapping("/search/by/user")
+    public List<Ord> searchByUser(@RequestParam long userId){
+        LambdaQueryWrapper<Ord> qw=new QueryWrapper<Ord>().lambda().like(Ord::getUserId,userId);
+        return ordService.list(qw);
+    }
+
+    @ApiOperation(value = "刷新订单总额")
+    @PostMapping("/fresh/totalMoney")
+    public boolean totalMoney(@RequestParam long storeId, @RequestParam long userId){
+        Ord ord=ordService.findOrd(storeId,userId);
+        if(ord==null){
+            ordService.saveOrUpdate(new Ord(storeId,userId,0,0));
+            ord=ordService.findOrd(storeId,userId);
+        }
+        OrdGoodsController ordGoodsController=new OrdGoodsController();
+        ord.setTotalMoney(ordGoodsController.totalMoney(ord.getOrdId()));
+        return ordService.saveOrUpdate(ord);
+    }
+
+    @ApiOperation(value = "刷新订单满减")
+    @PostMapping("/fresh/plan")
+    public boolean plan(@RequestParam long storeId, @RequestParam long userId){
+        Ord ord=ordService.findOrd(storeId,userId);
+        if(ord==null){
+            ordService.saveOrUpdate(new Ord(storeId,userId,0,0));
+            ord=ordService.findOrd(storeId,userId);
+        }
+        ReductionPlanController reductionPlanController=new ReductionPlanController();
+        ord.setTotalDiscount(reductionPlanController.bestPlan(ord.getTotalMoney()));
+        return ordService.saveOrUpdate(ord);
+    }
+
+    @ApiOperation(value = "刷新订单折扣")
+    @PostMapping("/fresh/discount")
+    public boolean plan(@RequestBody Discount discount,@RequestBody Ord ord){
+        ord.setTotalDiscount(ord.getTotalDiscount()+ discount.getDiscountMoney());
+        return ordService.saveOrUpdate(ord);
+    }
+
+    @ApiOperation(value = "修改订单状态")
+    @PostMapping("/state")
+    public boolean state(@RequestBody Ord ord, int n){
+        ord.setIsReturn(n);
+        if(n==1) ord.setOrdTime(new Date(System.currentTimeMillis()));
+        return ordService.saveOrUpdate(ord);
+    }
+
+
 
     @ApiOperation(value = "修改订单")
     @PostMapping("/update")
@@ -83,5 +149,29 @@ public class OrdController {
     @PostMapping("/remove")
     public boolean remove(@RequestBody Ord ord){
         return ordService.removeById(ord.getOrdId());
+    }
+
+    @ApiOperation(value = "骑手查询已接订单")
+    @GetMapping("/query/ord/by/rider")
+    public List<Ord> queryOrdByRiderId(@RequestParam long riderId){
+        LambdaQueryWrapper<Ord> qw=new QueryWrapper<Ord>().lambda().like(Ord::getRiderId,riderId);
+        return ordService.list(qw);
+    }
+
+    @ApiOperation(value = "查询可接订单")
+    @GetMapping("/query/ord")
+    public List<Ord> queryOrd(@RequestParam long storeId){
+        return ordService.queryOrd(storeId,1);
+    }
+
+    @ApiOperation(value = "骑手接单")
+    @GetMapping("/rider/get")
+    public String riderGet(@RequestParam long ordId,@RequestParam long riderId){
+        Ord ord=ordService.getById(ordId);
+        if(ord.getIsReturn()!=1) return "操作错误";
+        ord.setRiderId(riderId);
+        ord.setIsReturn(4);
+        if(ordService.saveOrUpdate(ord)) return "接单成功";
+        return "接单失败";
     }
 }
