@@ -34,6 +34,16 @@ public class OrdGoodsController {
         return ordGoodsService.saveOrUpdate(ordGoods);
     }
 
+    @ApiOperation(value = "添加多个订单商品")
+    @PostMapping("/save/list")
+    public boolean saveList(@RequestParam long ordId,@RequestBody List<OrdGoods> list){
+        for(OrdGoods ordGoods:list){
+            ordGoods.setOrdId(ordId);
+            if(!ordGoodsService.saveOrUpdate(ordGoods)) return false;
+        }
+        return true;
+    }
+
     @ApiOperation(value = "修改订单商品")
     @PostMapping("/update")
     public boolean update(@RequestBody OrdGoods ordGoods){
