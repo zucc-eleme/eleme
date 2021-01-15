@@ -28,6 +28,7 @@ public class Goods {
     @TableField(value = "high_rating")
     private float highRating;
 
+    public Goods(){}
     public Goods(long goodsId, String className, long storeId, String goodsName, float goodsPrice, String goodsPicture, String goodsDescription, int monthSales, float highRating) {
         this.goodsId = goodsId;
         this.className = className;

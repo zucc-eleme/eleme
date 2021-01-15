@@ -12,7 +12,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Api(tags = "测试接口")
+@Api(tags = "商品接口")
 @RestController
 @RequestMapping("/goods")
 public class GoodsController {

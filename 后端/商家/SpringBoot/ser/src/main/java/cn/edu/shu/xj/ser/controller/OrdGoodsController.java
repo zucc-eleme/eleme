@@ -13,7 +13,7 @@ import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-@Api(tags = "测试接口")
+@Api(tags = "订单商品接口")
 @RestController
 @RequestMapping("/ordGoods")
 public class OrdGoodsController {
@@ -32,6 +32,16 @@ public class OrdGoodsController {
     public boolean save(@RequestBody Ord ord,@RequestBody Goods goods,int n){
         OrdGoods ordGoods=new OrdGoods(ord.getOrdId(), goods.getGoodsName(),n, goods.getGoodsPrice());
         return ordGoodsService.saveOrUpdate(ordGoods);
+    }
+
+    @ApiOperation(value = "添加多个订单商品")
+    @PostMapping("/save/list")
+    public boolean saveList(@RequestParam long ordId,@RequestBody List<OrdGoods> list){
+        for(OrdGoods ordGoods:list){
+            ordGoods.setOrdId(ordId);
+            if(!ordGoodsService.saveOrUpdate(ordGoods)) return false;
+        }
+        return true;
     }
 
     @ApiOperation(value = "修改订单商品")

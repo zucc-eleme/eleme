@@ -13,7 +13,7 @@ import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
-@Api(tags = "测试接口")
+@Api(tags = "订单接口")
 @RestController
 @RequestMapping("/ord")
 public class OrdController {
@@ -25,6 +25,16 @@ public class OrdController {
     public int ordNumByStore(@RequestParam long storeId){
         LambdaQueryWrapper<Ord> qw=new QueryWrapper<Ord>().lambda().like(Ord::getStoreId,storeId);
         return ordService.count(qw);
+    }
+
+    @ApiOperation(value = "订单状态")
+    @GetMapping("/ord/by/n")
+    public List<Ord> ordNumByStore(List<Ord> ords, int n){
+        List<Ord> newOrd=new ArrayList<>();
+        for(Ord ord:ords){
+            if(ord.getIsReturn()==n) newOrd.add(ord);
+        }
+        return newOrd;
     }
 
     @ApiOperation(value = "查询一定时间内的订单")
@@ -71,6 +81,19 @@ public class OrdController {
     public boolean add(@RequestParam long storeId, @RequestParam long userId){
         Ord ord=new Ord(storeId,userId,0,0);
         return ordService.saveOrUpdate(ord);
+    }
+
+    @ApiOperation(value = "创建订单")
+    @PostMapping("/save")
+    public boolean save(@RequestParam long storeId, @RequestParam long userId,@RequestBody List<OrdGoods> list){
+        Ord ord=null;
+        if(ordService.findOrd(storeId, userId)!=null) ord=ordService.findOrd(storeId, userId);
+        else {
+            if (!ordService.saveOrUpdate(new Ord(storeId, userId, 0, 0))) return false;
+            ord = ordService.findOrd(storeId, userId);
+        }
+        OrdGoodsController ordGoodsController=new OrdGoodsController();
+        return ordGoodsController.saveList(ord.getOrdId(),list);
     }
 
     @ApiOperation(value = "查找订单")
@@ -139,5 +162,29 @@ public class OrdController {
     @PostMapping("/remove")
     public boolean remove(@RequestBody Ord ord){
         return ordService.removeById(ord.getOrdId());
+    }
+
+    @ApiOperation(value = "骑手查询已接订单")
+    @GetMapping("/query/ord/by/rider")
+    public List<Ord> queryOrdByRiderId(@RequestParam long riderId){
+        LambdaQueryWrapper<Ord> qw=new QueryWrapper<Ord>().lambda().like(Ord::getRiderId,riderId);
+        return ordService.list(qw);
+    }
+
+    @ApiOperation(value = "查询可接订单")
+    @GetMapping("/query/ord")
+    public List<Ord> queryOrd(@RequestParam long storeId){
+        return ordService.queryOrd(storeId,1);
+    }
+
+    @ApiOperation(value = "骑手接单")
+    @GetMapping("/rider/get")
+    public String riderGet(@RequestParam long ordId,@RequestParam long riderId){
+        Ord ord=ordService.getById(ordId);
+        if(ord.getIsReturn()!=1) return "操作错误";
+        ord.setRiderId(riderId);
+        ord.setIsReturn(4);
+        if(ordService.saveOrUpdate(ord)) return "接单成功";
+        return "接单失败";
     }
 }

@@ -26,7 +26,7 @@ public interface UserMapper extends BaseMapper<User> {
     @Select("SELECT * FROM user WHERE user_phone = #{userPhone}")
     User findOneUserByPhone(@Param("userPhone") String userPhone);
 
-    @Select("SELECT COUNT(user_id) FROM user")
+    @Select("SELECT MAX(user_id) FROM user")
     long getMaxUserId();
 
     @Update("UPDATE user set user_pwd=#{userPwd} where user_phone = #{userPhone}")

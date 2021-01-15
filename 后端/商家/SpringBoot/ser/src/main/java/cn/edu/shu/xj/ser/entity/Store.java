@@ -28,6 +28,7 @@ public class Store {
     @TableField(value = "delivery_end")
     private String deliveryEnd;
 
+
     public Store(long storeId, String storeClass, String storePicture, String storeName, String storePasswd, String storeAddress, String storePhone, String deliveryBegin, String deliveryEnd) {
         this.storeId = storeId;
         this.storeClass = storeClass;
@@ -51,10 +52,22 @@ public class Store {
         this.deliveryEnd = deliveryEnd;
     }
 
+    public Store(String storeClass, String storeName,String storePasswd, String storeAddress, String storePhone, String deliveryBegin, String deliveryEnd) {
+        this.storeClass = storeClass;
+        this.storeName = storeName;
+        this.storePasswd = storePasswd;
+        this.storeAddress = storeAddress;
+        this.storePhone = storePhone;
+        this.deliveryBegin = deliveryBegin;
+        this.deliveryEnd = deliveryEnd;
+    }
+
     public Store(String storePhone, String storePasswd) {
         this.storePhone = storePhone;
         this.storePasswd= storePasswd;
     }
+
+    //public Store(){}
 
     public long getStoreId() {
         return storeId;

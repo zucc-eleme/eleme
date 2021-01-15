@@ -18,7 +18,7 @@ import java.util.List;
 
 @Api(tags = "用户登录模块")
 @RestController
-@RequestMapping("/userLogin")
+@RequestMapping("/user/Login")
 public class UserLoginController {
     @Autowired
     IUserService userService;
@@ -108,7 +108,7 @@ public class UserLoginController {
 
     @ApiOperation(value = "通过用户id删除用户")
     @PostMapping("/remove/userId")
-    public boolean removeByUseid(@RequestParam(value = "userId") long userId){
+    public boolean removeByUseId(@RequestParam(value = "userId") long userId){
         return userService.removeById(userId);
     }
 

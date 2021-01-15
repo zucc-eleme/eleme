@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="cn.edu.shu.xj.ser.mapper.RiderMapper" >
+    <!-- 通用查询映射结果 -->
+    <resultMap id="RiderResultMap" type="cn.edu.shu.xj.ser.entity.Rider">
+        <result column="rider_id" property="riderId"/>
+        <result column="rider_name" property="riderName"/>
+        <result column="rider_passwd" property="riderPasswd"/>
+        <result column="rider_phone" property="riderPhone"/>
+        <result column="rider_position" property="riderPosition"/>
+    </resultMap>
+</mapper>
