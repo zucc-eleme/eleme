@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="64bd902b-a1bd-4901-9f76-2f5dcc896601" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/SpringBoot/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/SpringBoot/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/ser/target/classes/cn/edu/shu/xj/ser/SerApplication.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/ser/target/classes/cn/edu/shu/xj/ser/config/Swagger2Configuration.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/ser/target/classes/cn/edu/shu/xj/ser/controller/GoodsController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/ser/target/classes/cn/edu/shu/xj/ser/controller/StoreController.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/ser/target/classes/cn/edu/shu/xj/ser/entity/Goods.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/ser/target/classes/cn/edu/shu/xj/ser/entity/Store.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/ser/target/classes/cn/edu/shu/xj/ser/mapper/GoodsMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/ser/target/classes/cn/edu/shu/xj/ser/mapper/StoreMapper.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/ser/target/classes/cn/edu/shu/xj/ser/service/IGoodsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/ser/target/classes/cn/edu/shu/xj/ser/service/IStoreService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/ser/target/classes/cn/edu/shu/xj/ser/service/impl/GoodsService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/ser/target/classes/cn/edu/shu/xj/ser/service/impl/StoreService.class" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/SpringBoot/ser/target/test-classes/cn/edu/shu/xj/ser/SerApplicationTests.class" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="ProjectId" id="1mvTKq6yDEY5ANS6okT5vH9g0Fu" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="64bd902b-a1bd-4901-9f76-2f5dcc896601" name="Default Changelist" comment="" />
+      <created>1610373004675</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1610373004675</updated>
+      <workItem from="1610373006713" duration="20000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+</project>

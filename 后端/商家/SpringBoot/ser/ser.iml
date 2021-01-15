@@ -21,6 +21,7 @@
         <setting name="provider-name" value="Hibernate" />
         <datasource-mapping>
           <factory-entry name="entityManagerFactory" />
+          <factory-entry name="ser" />
         </datasource-mapping>
         <naming-strategy-map />
       </configuration>
@@ -95,6 +96,24 @@
     <orderEntry type="library" scope="TEST" name="Maven: org.springframework:spring-test:5.3.1" level="project" />
     <orderEntry type="library" scope="TEST" name="Maven: org.xmlunit:xmlunit-core:2.7.0" level="project" />
     <orderEntry type="library" name="Maven: com.alibaba:druid:1.0.29" level="project" />
+    <orderEntry type="module-library">
+      <library name="Maven: com.alibaba:jconsole:1.8.0">
+        <CLASSES>
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_221/lib/jconsole.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
+    <orderEntry type="module-library">
+      <library name="Maven: com.alibaba:tools:1.8.0">
+        <CLASSES>
+          <root url="jar://C:/Program Files/Java/jdk1.8.0_221/lib/tools.jar!/" />
+        </CLASSES>
+        <JAVADOC />
+        <SOURCES />
+      </library>
+    </orderEntry>
     <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus-boot-starter:3.0.1" level="project" />
     <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus:3.0.1" level="project" />
     <orderEntry type="library" name="Maven: com.baomidou:mybatis-plus-extension:3.0.1" level="project" />
