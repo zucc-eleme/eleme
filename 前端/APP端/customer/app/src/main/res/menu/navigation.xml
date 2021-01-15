@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item
+        android:id="@+id/nav_main"
+        android:icon="@drawable/maini"
+        android:title="首页"
+        />
+    <item
+        android:id="@+id/nav_order"
+        android:icon="@drawable/order"
+        android:title="订单" />
+    <item
+        android:id="@+id/nav_mine"
+        android:icon="@drawable/mine"
+        android:title="我的" />
+</menu>

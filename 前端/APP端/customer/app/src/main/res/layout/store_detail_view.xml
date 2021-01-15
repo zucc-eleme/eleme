@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".control.order.ShoppingCartActivity">
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:background="@color/shop_bg_color">
+
+        <com.google.android.material.appbar.AppBarLayout
+            android:id="@+id/appBarLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="@color/shop_bg_color"
+            android:theme="@style/AppTheme.AppBarOverlay">
+            <androidx.appcompat.widget.Toolbar
+                android:id="@+id/toolbar_customer_info"
+                android:layout_width="match_parent"
+                android:layout_height="?attr/actionBarSize"
+                android:background="@android:color/transparent"
+                app:popupTheme="@style/AppTheme.PopupOverlay"
+                >
+                <ImageView
+                    android:id="@+id/toolbar_button_store_detail_back"
+                    android:layout_width="60dp"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/iv_back_selector"
+                    android:clickable="true">
+                </ImageView>
+                <TextView
+                    android:id="@+id/tv_back_store_detail"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/title_store_detail"
+                    android:textSize="25sp"
+                    android:textStyle="bold"
+                    android:clickable="true"
+                    android:layout_gravity="center">
+                </TextView>
+            </androidx.appcompat.widget.Toolbar>
+        </com.google.android.material.appbar.AppBarLayout>
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="65dp"
+            android:orientation="vertical"
+            android:background="@android:color/white"
+            android:paddingTop="50dp">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="菜单"
+                android:textSize="18sp"
+                android:textColor="@android:color/black"
+                android:padding="8dp"/>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="1dp"
+                android:background="@color/light_gray"
+                android:layout_marginLeft="10dp"
+                android:layout_marginRight="10dp"/>
+        </LinearLayout>
+
+        <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+            xmlns:tools="http://schemas.android.com/tools"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="#EDEBEB"
+            android:id="@+id/containerLayout"
+            tools:context="ShoppingCartActivity">
+
+            <include layout="@layout/layout_main_shopping_cart"
+                android:layout_width="match_parent"
+                android:layout_above="@+id/bottom_shopping_car"
+                android:layout_height="match_parent"
+                />
+
+            <LinearLayout android:orientation="horizontal"
+                android:layout_width="match_parent"
+                android:background="#aa000000"
+                android:id="@+id/bottom_shopping_car"
+                android:clickable="true"
+                android:onClick="onClick"
+                android:gravity="center_vertical"
+                android:layout_alignParentBottom="true"
+                android:layout_height="60dp">
+                <TextView android:layout_marginLeft="80dp"
+                    android:gravity="center_vertical"
+                    android:text="￥ 0"
+                    android:textSize="20sp"
+                    android:textColor="#fff"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:id="@+id/tvCost"
+                    android:layout_height="wrap_content" />
+
+                <TextView android:textColor="#fff"
+                    android:layout_width="wrap_content"
+                    android:text="￥30元起送"
+                    android:id="@+id/tvTips"
+                    android:layout_marginRight="10dp"
+                    android:gravity="center"
+                    android:layout_height="match_parent" />
+                <TextView android:textColor="#fff"
+                    android:layout_width="120dp"
+                    android:background="#22c222"
+                    android:text="去结算"
+                    android:onClick="onClick"
+                    android:clickable="true"
+                    android:id="@+id/tvSubmit"
+                    android:visibility="gone"
+                    android:textSize="18sp"
+                    android:gravity="center"
+                    android:layout_height="match_parent" />
+            </LinearLayout>
+            <RelativeLayout
+                android:layout_width="80dp"
+                android:layout_height="80dp"
+                android:layout_alignParentBottom="true">
+
+                <ImageView android:layout_alignParentBottom="true"
+                    android:src="@drawable/shop_car_empty"
+                    android:layout_width="80dp"
+                    android:id="@+id/imgCart"
+                    android:layout_height="80dp"
+                    android:scaleType="fitXY"/>
+
+                <TextView
+                    android:id="@+id/tvCount"
+                    android:layout_marginTop="50dp"
+                    android:layout_marginLeft="60dp"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/circle_red"
+                    android:text="1"
+                    android:textColor="#fff"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:visibility="gone"/>
+            </RelativeLayout>
+
+        </RelativeLayout>
+    </LinearLayout>
+
+    <include layout="@layout/store_detail_view_head" />
+</FrameLayout>

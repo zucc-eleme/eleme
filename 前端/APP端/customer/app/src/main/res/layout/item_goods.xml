@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@drawable/card_item"
+    android:layout_marginTop="8dp"
+    android:layout_marginLeft="8dp"
+    android:layout_marginRight="8dp">
+    <ImageView android:id="@+id/list_food_picture"
+        android:layout_margin="5dp"
+        android:src="@mipmap/ic_launcher"
+        android:layout_width="65dp"
+        android:layout_height="65dp"
+        android:scaleType="fitXY"/>
+    <LinearLayout android:orientation="vertical"
+        android:layout_width="match_parent"
+        android:paddingTop="2dp"
+        android:paddingRight="5dp"
+        android:layout_height="wrap_content">
+        <TextView android:text="已加入肯德基豪华套餐"
+            android:textColor="#000"
+            android:textSize="16sp"
+            android:id="@+id/list_food_name"
+            android:layout_width="300dp"
+            android:layout_height="wrap_content" />
+        <RatingBar android:id="@+id/ratingBar"
+            android:layout_width="wrap_content"
+            android:stepSize="0.5"
+            android:numStars="5"
+            android:rating="3.5"
+            android:isIndicator="true"
+            style="@style/Base.Widget.AppCompat.RatingBar.Small"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/tvNum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="月销售:100"
+            android:textColor="@color/shop_bg_color"
+            android:textSize="10sp" />
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:id="@+id/tvPrice"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="￥ 100"
+                android:textColor="#FF3300"
+                android:textSize="14sp" />
+            <LinearLayout android:gravity="right"
+                android:layout_toRightOf="@id/tvPrice"
+                android:layout_alignParentRight="true"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+                <TextView android:clickable="true"
+                    android:id="@+id/tvMinus"
+                    android:gravity="center"
+                    android:visibility="gone"
+                    android:textStyle="bold"
+                    android:background="@drawable/button_minus"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
+                <TextView android:text="0"
+                    android:id="@+id/count"
+                    android:minWidth="20dp"
+                    android:visibility="gone"
+                    android:layout_gravity="center_vertical"
+                    android:textSize="16sp"
+                    android:gravity="center"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
+                <TextView android:clickable="true"
+                    android:id="@+id/tv_add_first"
+                    android:textStyle="bold"
+                    android:background="@drawable/add_car"
+                    android:text="加入购物车"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:layout_width="80dp"
+                    android:layout_height="20dp" />
+                <TextView android:visibility="gone"
+                    android:clickable="true"
+                    android:id="@+id/tv_add_next"
+                    android:textStyle="bold"
+                    android:background="@drawable/button_add"
+                    android:textColor="@android:color/white"
+                    android:textSize="12sp"
+                    android:gravity="center"
+                    android:layout_width="20dp"
+                    android:layout_height="20dp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </LinearLayout>
+</LinearLayout>

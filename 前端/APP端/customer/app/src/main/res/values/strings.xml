@@ -1,0 +1,26 @@
+<resources>
+    <string name="app_name">My Application</string>
+    <string name="in_customer">我要订餐</string>
+    <string name="in_shop">我的店铺</string>
+    <string name="id_remind">请输入账号</string>
+    <string name="customer_create">用户注册</string>
+    <string name="shop_create">商家注册</string>
+    <string name="pwd_remind">请输入密码</string>
+    <string name="pwd_forget">忘记密码？</string>
+    <string name="login_button">登录</string>
+    <string name="register_button">注册</string>
+    <string name="pwd_inflect">获取密码</string>
+    <string name="title_activity_main">首页</string>
+    <string name="title_store_detail">店铺详情</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+    <string name="navigation_drawer_open">打开抽屉</string>
+    <string name="navigation_drawer_close">关闭抽屉</string>
+    <string name="title_activity_search_address">SearchAddressActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+</resources>

@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/user_register"
+    android:background="@color/blue_color"
+    tools:context=".control.LoginCustomerActivity">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/login_customer_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        app:popupTheme="@style/ThemeOverlay.AppCompat.Light"
+        app:titleTextColor="#ffffff" />
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="100dp"
+        android:background="@drawable/form_style">
+        <EditText
+            android:id="@+id/editUserId"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:lines="1"
+            android:ems="10"
+            android:hint="请输入用户名/手机号码"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/editUserPwd"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:lines="1"
+            android:ems="10"
+            android:hint="请输入密码"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/login_customer"
+            android:layout_width="300dp"
+            android:layout_height="53dp"
+            android:background="@drawable/button_style"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"
+            android:text="@string/login_button"
+            android:textColor="#ffffff"
+            android:textSize="24dp"
+            android:clickable="true"/>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp"
+            >
+
+            <TextView
+                android:id="@+id/customer_create"
+                android:layout_width="60dp"
+                android:layout_height="20dp"
+                android:clickable="true"
+                android:text="@string/customer_create"
+                android:textColor="#FFEB3B"
+                />
+
+            <TextView
+                android:id="@+id/pwd_forget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:layout_marginLeft="30dp"
+                android:text="@string/pwd_forget"
+                android:textColor="#0DFA17" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent" android:layout_height="match_parent"
+    android:background="@color/blue_color">
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="250dp"
+        android:textSize="36sp"
+        android:text="我的订单"
+        android:textColor="@android:color/white"
+        android:gravity="center"
+
+        />
+    <ListView
+        android:id="@+id/list_order"
+        android:background="@drawable/card_item"
+        android:layout_marginTop="150dp"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+    </ListView>
+</RelativeLayout>

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.appcompat.widget.Toolbar
+        android:id="@+id/customer_forget_toolbar"
+        android:layout_width="match_parent"
+        android:layout_height="?attr/actionBarSize"
+        android:layout_gravity="center"
+        android:background="?attr/colorPrimary"
+        android:elevation="4dp"
+        android:theme="@style/ThemeOverlay.AppCompat.ActionBar"
+        android:titleTextColor="#ffffff"
+        android:gravity="center_horizontal">
+        <ImageView
+            android:id="@+id/toolbar_button_change_pwd_back"
+            android:layout_width="60dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/iv_back"
+            android:clickable="true">
+        </ImageView>
+        <TextView
+            android:id="@+id/tv_back_customer_info_detail"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="修改密码"
+            android:textSize="25sp"
+            android:textStyle="bold"
+            android:textColor="@android:color/white"
+            android:clickable="true"
+            android:layout_gravity="center"/>
+    </androidx.appcompat.widget.Toolbar>
+
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:layout_gravity="center"
+        android:layout_marginTop="120dp"
+        android:background="@drawable/form_style">
+        <EditText
+            android:id="@+id/edit_old_userId"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:lines="1"
+            android:ems="10"
+            android:hint="请输入用户名/手机号码"
+            android:inputType="textPersonName" />
+
+        <EditText
+            android:id="@+id/edit_old_user_pwd"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:lines="1"
+            android:ems="10"
+            android:hint="请输入旧密码"
+            android:inputType="textPassword" />
+        <EditText
+            android:id="@+id/edit_old_user_new_pwd"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:lines="1"
+            android:ems="10"
+            android:hint="请输入新密码"
+            android:inputType="textPassword" />
+        <EditText
+            android:id="@+id/edit_user_old_new_two_pwd"
+            android:layout_width="300dp"
+            android:layout_height="50dp"
+            android:layout_marginTop="20dp"
+            android:lines="1"
+            android:ems="10"
+            android:hint="请再次输入新密码"
+            android:inputType="textPassword" />
+
+        <Button
+            android:id="@+id/find_back_detail_pwd"
+            android:layout_width="300dp"
+            android:layout_height="53dp"
+            android:background="@drawable/button_style"
+            android:layout_marginTop="30dp"
+            android:layout_marginBottom="10dp"
+            android:layout_gravity="center"
+            android:text="修改密码"
+            android:textColor="#ffffff"
+            android:textSize="24dp"
+            android:clickable="true"/>
+        <LinearLayout
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_gravity="center"
+            android:layout_marginBottom="10dp">
+            <TextView
+                android:id="@+id/pwd_forget"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:clickable="true"
+                android:layout_marginLeft="30dp"
+                android:text="@string/pwd_forget"
+                android:textColor="#0DFA17" />
+        </LinearLayout>
+    </LinearLayout>
+
+
+
+
+
+</LinearLayout>

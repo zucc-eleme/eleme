@@ -1,0 +1,142 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+<LinearLayout
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+    <com.google.android.material.appbar.AppBarLayout
+        android:id="@+id/appBarLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:theme="@style/AppTheme.AppBarOverlay">
+        <androidx.appcompat.widget.Toolbar
+            android:id="@+id/toolbar_customer_order"
+            android:layout_width="match_parent"
+            android:layout_height="?attr/actionBarSize"
+            android:background="?attr/colorPrimary">
+            <ImageView
+                android:id="@+id/order_detail_back"
+                android:layout_width="60dp"
+                android:layout_height="wrap_content"
+                android:background="@drawable/iv_back_selector"
+                android:clickable="true"/>
+            <TextView
+                android:id="@+id/toolbar_order_detail_title"
+                android:layout_gravity="center"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="订单状态"
+                android:textSize="30sp"/>
+
+        </androidx.appcompat.widget.Toolbar>
+    </com.google.android.material.appbar.AppBarLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/form_style"
+        android:padding="5dp"
+        android:orientation="vertical">
+
+        <RelativeLayout
+            android:id="@+id/order_shop"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:padding="5dp">
+
+            <ImageView
+                android:id="@+id/order_store_detail_imagine"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:scaleType="fitXY"
+                android:src="@mipmap/ic_launcher" />
+
+            <TextView
+                android:id="@+id/order_store_detail_name"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="20dp"
+                android:layout_toRightOf="@id/order_store_detail_imagine"
+                android:text="商家" />
+
+            <TextView
+                android:visibility="gone"
+                android:id="@+id/order_again"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:text="再来一单＞"
+                android:textColor="@android:color/holo_blue_bright" />
+        </RelativeLayout>
+
+        <ListView
+            android:layout_toEndOf="@id/order_shop"
+            android:layout_marginTop="10dp"
+            android:id="@+id/order_good_list"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" />
+        <TextView
+            android:id="@+id/order_detail_price_count"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal"
+            android:gravity="right"
+            android:text="实付46元"
+            android:textSize="20dp"
+            android:textStyle="bold"/>
+        />
+        <ImageView
+            android:id="@+id/order_detail_add"
+            android:layout_width="60dp"
+            android:layout_height="20dp"
+            android:background="@drawable/button_style"
+            android:clickable="true"/>
+    </LinearLayout>
+    <RelativeLayout
+        android:layout_toEndOf="@id/order_shop"
+        android:layout_marginTop="15dp"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/form_style">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:padding="5dp"
+            android:orientation="vertical">
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="订单信息"
+                android:textColor="@android:color/black"/>
+            <TextView
+                android:id="@+id/order_id"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="订单号："/>
+            <TextView
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="支付方式：在线支付"/>
+            <TextView
+                android:id="@+id/order_time"
+                android:layout_marginTop="5dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="下单时间："/>
+        </LinearLayout>
+    </RelativeLayout>
+
+</LinearLayout>
+
+
+</RelativeLayout>

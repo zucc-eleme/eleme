@@ -1,0 +1,18 @@
+<component name="libraryTable">
+  <library name="Gradle: com.flipboard:bottomsheet-core:1.5.1@aar">
+    <CLASSES>
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c358dd881a851839957e6e2e2574e77f/jetified-bottomsheet-core-1.5.1/jars/classes.jar!/" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c358dd881a851839957e6e2e2574e77f/jetified-bottomsheet-core-1.5.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/c358dd881a851839957e6e2e2574e77f/jetified-bottomsheet-core-1.5.1/AndroidManifest.xml" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/49d2dc9c9fc3fe4ee38641de2d8f46d6/jetified-bottomsheet-core-1.5.1/res" />
+      <root url="file://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/49d2dc9c9fc3fe4ee38641de2d8f46d6/jetified-bottomsheet-core-1.5.1/AndroidManifest.xml" />
+      <root url="jar://$USER_HOME$/.gradle/caches/transforms-2/files-2.1/49d2dc9c9fc3fe4ee38641de2d8f46d6/jetified-bottomsheet-core-1.5.1/jars/classes.jar!/" />
+    </CLASSES>
+    <JAVADOC>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.flipboard/bottomsheet-core/1.5.1/929598a8d282f7d82132e0c442850a36ecb63f52/bottomsheet-core-1.5.1-javadoc.jar!/" />
+    </JAVADOC>
+    <SOURCES>
+      <root url="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/com.flipboard/bottomsheet-core/1.5.1/c00eda5571407d0ad776aef515df3b3f9164a787/bottomsheet-core-1.5.1-sources.jar!/" />
+    </SOURCES>
+  </library>
+</component>
